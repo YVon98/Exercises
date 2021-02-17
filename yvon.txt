@@ -203,5 +203,6 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
 	https://helpex.vn/article/pagingandsortingrep-repository-cach-su-dung-voi-thymeleaf-5c54d028507419248c9af81a
 	
-	phan trang:   https://www.youtube.com/watch?v=XjsV3yZ88eE
+	phan trang:   https://www.youtube.com/watch?v=XjsV3yZ88eE     https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
+	https://www.youtube.com/watch?v=rFSxmKen6aQ
 				
