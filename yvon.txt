@@ -1,0 +1,201 @@
+...completed
+git...username=Y Von
+	email = yvonthach5@gmail.com
+	
+	
+	// to remove a repository from git use
+								rm -rf .git       
+
+
+7/1/2021
+ArrayList   ...ok
+HashSet   ...ok
+HashMap   ...ok
+Generic   bounded type parameters in     https://www.tutorialspoint.com/java/java_generics.htm   ...ok
+Serialization   ....ok
+Multithread....synchonize & lock ... ok
+
+//8/1/2021
+xem tiep sourcetree    ..... ok
+/////https://www.youtube.com/watch?v=sUAs0M_dSgE   ...hoc them 
+
+
+Design pattern : hoc cach thuc thi cac mau  ...   https://viblo.asia/p/tong-hop-cac-bai-huong-dan-ve-design-pattern-23-mau-co-ban-cua-gof-3P0lPQPG5ox
+	singleton   .... cach thuc implement cho singleton: https://gpcoder.com/4190-huong-dan-java-design-pattern-singleton/
+	factory method .... cach thuc implement cho factory pattern :  https://gpcoder.com/4365-huong-dan-java-design-pattern-abstract-factory/
+	strategy   ....    ok  
+	observer
+	builder   ...   ok
+	adapter   ...    https://refactoring.guru/design-patterns/adapter         dang do
+	state      ...    ok
+
+junit test trong maven  ...   https://www.guru99.com/junit-annotations-api.html (tham khao cho junit test trong maven)
+	-thuc hien trong src/test/java
+
+
+mock object:thay the cho doi tuong that co nhung hanh vi kho doan biet duoc;
+		doi tuong that kho cai dat
+		doi tuong that k ton tai
+		tao doi tuong gia de thuc hien test(gia lap doi tuong)  (y tu hieu)
+
+		
+Log4j: 3 thanh phan chinh
+	- Logger: chiu trach nhiem nam bat thong tin ghi nhat ki
+	- Appenders: Chiu trach nhiem xuat ban thong tin ghi nhat ki den cac diem ua thich khac nhau
+	-Layout: Chiu tracsh nhiem dinh dang thong tin ghi nhat ki theo cac kieu khac nhau 
+	
+		
+Spring framework:
+		common logging: set lai classpath
+		
+	- dependence injection:loai bo su phu thuoc giua cac class => giup viec quan li va kiem thu de dang hon (dependence injection lam code it phu thuoc hon)
+	- IoC container cos 2 loai : bean factory va application context
+		ioc tao doi tuong, noi chung lai voi nhau va cau hinh chung
+		
+		+cac cach dinh nghia bean:
+			<?xml version = "1.0" encoding = "UTF-8"?>
+			<beans xmlns = "http://www.springframework.org/schema/beans"
+			   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+			   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+			   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+			 
+			   <!-- Một định nghĩa bean đơn giản -->
+			   <bean id = "..." class = "...">
+					<!-- Cấu hình bean tại đây -->
+			   </bean>
+			 
+			   <!-- Một định nghĩa bean với chế độ lazy-init -->
+			   <bean id = "..." class = "..." lazy-init = "true">
+					<!-- Cấu hình bean tại đây -->
+			   </bean>
+			 
+			   <!-- Một định nghĩa bean với phương thức khởi tạo -->
+			   <bean id = "..." class = "..." init-method = "...">
+					<!-- Cấu hình bean tại đây -->
+			   </bean>
+			 
+			   <!-- Một định nghĩa bean với phương thức hủy -->
+			   <bean id = "..." class = "..." destroy-method = "...">
+					<!-- Cấu hình bean tại đây -->   ok rồi
+			   </bean>
+				
+			</beans>
+			
+		luu y:               s	https://www.tutorialspoint.com/spring/spring_bean_life_cycle.htm    ... ket qua dat 90% so voi mong muon // đã đc giải quyết 
+		xem lai phan nay:     https://www.tutorialspoint.com/spring/spring_bean_post_processors.htm   (vi du k co dap an nhu mong muon) // đã được giải quyết
+		
+		
+		
+		Phần chính của spring, tinh túy là đây : https://viettuts.vn/spring/ioc-container-trong-spring
+		up eclipse ide trên laptop lên git để lên công ty cài sử dụng cho tiện 
+		
+		
+		học tiếp:    https://www.tutorialspoint.com/spring/spring_autowiring_byname.htm    ok
+		
+		https://www.tutorialspoint.com/spring/spring_annotation_based_configuration.htm   cần chú ý
+		
+		
+		
+		các cách cấu hình trong spring: 
+			1. Cấu hình bằng file beans.xml
+			2.Cấu hình bằng annotations 
+			3. Cấu hình bằng java:  có 1 file @Configuration chứa định nghĩa các bean bằng @Bean (tương đương với id= class đc định nghĩa bằng @Beans), file này tương đương với Beans.xml 
+			
+			
+		https://www.tutorialspoint.com/spring/spring_java_based_configuration.htm 
+	- https://www.tutorialspoint.com/spring/spring_transaction_management.htm
+	
+	
+Hibernate:    https://www.tutorialspoint.com/hibernate/hibernate_quick_guide.htm
+
+	Phần về nhà: https://stackjava.com/hibernate/huong-dan-tu-hoc-hibernate-framework-bang-tieng-viet.html
+				https://viettuts.vn/hibernate
+		
+		
+	xem tiep productDetail     passed
+	
+	https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-annotations-examples    //ok
+	
+	cascade: tự động update các bản ghi tham chiếu tới nó khi có sự thay đổi -> giảm hiệu năng ->nên sử dụng tùy trường hợp
+	
+	
+Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
+		https://www.codehub.com.vn/RESTful-Web-Services-La-Gi
+		
+		https://topdev.vn/blog/restful-api-la-gi/
+		
+	****xem tiep video cu tuan truoc     .......... https://www.youtube.com/watch?v=px5rfwi4yYk
+	***Create RESTful webservice with springboot :  
+	     video1:  https://www.youtube.com/watch?v=kbisNUfqVLM
+		video2:   https://www.youtube.com/watch?v=mrrHTJxppi8   ...
+		học cách dùng URIs
+		
+		
+	
+	CRUD REST service:   https://www.youtube.com/watch?v=YYwFhclOlqs
+	https://openplanning.net/10865/vi-du-crud-don-gian-voi-spring-mvc-restful-web-service#a4922867
+	
+	*********************************                    https://www.javatpoint.com/spring-boot-crud-operations                  *************************************************
+	
+	@Requestbody......truyền đối tượng dưới dạng chuỗi json
+	
+	
+	*****spring security:     https://stackjava.com/spring/code-vi-du-spring-boot-security-hello-tao-form-login.html (thực hiện mẫu security-1)
+			https://kipalog.com/posts/Huong-dan-lap-trinh-Spring-Security
+	
+	****upload and download file:     https://dzone.com/articles/java-springboot-rest-api-to-uploaddownload-file-on
+	https://mkyong.com/spring-boot/spring-boot-file-upload-example-ajax-and-rest/   đang làm cái này nha kết hợp với    https://devwithus.com/download-upload-files-with-spring-boot/
+	https://www.javaguides.net/2018/11/spring-boot-2-file-upload-and-download-rest-api-tutorial.html   rõ nhất
+	https://attacomsian.com/blog/uploading-files-spring-boot
+	219, 166, 109,126
+	enctype='multipart/form-data' means that no characters will be encoded
+	uploadFile1: chưa thực hiện ddc phương thức post   
+	success: https://www.javainuse.com/spring/bootupload ( vấn đề nằm ở file jsp vì đã khai báo thiếu)
+	
+	www.javainuse.com
+	
+***Đồ án:
+	các yêu cầu cần thực hiện:
+	+Thêm sp
+	+cập nhật sp 
+	+xóa sp
+	+import sp từ file csv
+	
+	+Tìm kiếm sản phẩm
+	+view sản phầm (có phân trang)
+	
+	+tạo order
+	
+	+xác thực email
+	+link hóa đơn bằng pdf
+	
+	+ngoại lệ cho order 
+	
+	+báo cáo bán hàng trong khoảng thời gian nào đó
+	+tải báo cáo bằng excel
+	+chuyển bc lên FTP server 
+	
+	
+	youtube.com/watch?v=BzQ5a1Wrb3s
+	https://www.youtube.com/watch?v=_ktzEsggFo4
+	
+	
+	https://www.cafeit.info/posts/spring-boot/controller-va-restcontroller-su-khac-nhau-giua-2-controller-nay
+	
+	https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql
+	
+	
+	https://www.codejava.net/frameworks/spring-boot/csv-export-example
+	
+	https://www.pixeltrice.com/import-the-csv-file-into-mysql-database-using-spring-boot-application/
+	
+	doc ghi file csv :     https://gpcoder.com/3107-doc-ghi-file-csv-trong-java/     ////   https://attacomsian.com/blog/spring-boot-upload-parse-csv-file
+	
+	paging:       https://www.codejava.net/frameworks/spring-boot/spring-data-jpa-filter-search-examples
+	https://www.codejava.net/frameworks/spring-boot/spring-data-jpa-paging-and-sorting-examples
+	
+	https://www.youtube.com/watch?v=Q4e_GydUjbs
+	
+	
+	https://stackoverflow.com/questions/56241495/how-to-filter-a-page-in-spring-boot-while-keeping-paging
+				
