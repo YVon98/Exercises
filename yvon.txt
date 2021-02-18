@@ -182,7 +182,7 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	https://www.cafeit.info/posts/spring-boot/controller-va-restcontroller-su-khac-nhau-giua-2-controller-nay
 	
-	https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql
+	https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql     ---create product
 	
 	
 	https://www.codejava.net/frameworks/spring-boot/csv-export-example
@@ -205,4 +205,11 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	phan trang:   https://www.youtube.com/watch?v=XjsV3yZ88eE     https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
 	https://www.youtube.com/watch?v=rFSxmKen6aQ
+	
+	
+	
+	${keyword != null ? '?keyword=' + keyword:''
+	
+	
+	
 				
