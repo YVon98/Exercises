@@ -200,16 +200,16 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	https://stackoverflow.com/questions/56241495/how-to-filter-a-page-in-spring-boot-while-keeping-paging
 	
 	17/2/2021:
-	https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
-	https://helpex.vn/article/pagingandsortingrep-repository-cach-su-dung-voi-thymeleaf-5c54d028507419248c9af81a
+	/////// https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
+	/////// https://helpex.vn/article/pagingandsortingrep-repository-cach-su-dung-voi-thymeleaf-5c54d028507419248c9af81a
 	
-	phan trang:   https://www.youtube.com/watch?v=XjsV3yZ88eE     https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
+	///// phan trang:   https://www.youtube.com/watch?v=XjsV3yZ88eE     https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
 	
 	
 	
 	
 	${keyword != null ? '?keyword=' + keyword:''}              '?keyword='+${keyword}
-	
+	https://www.youtube.com/watch?v=ctwRpskAeIU
 	
 	
 	https://www.youtube.com/watch?v=rFSxmKen6aQ
@@ -229,6 +229,8 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	mail:       https://openplanning.net/11145/spring-email
 	
 	export excel:     https://www.youtube.com/watch?v=BtUdl9pZwR0
+	
+	
 	
 	tiếp tục  phần order bằng cách thêm hình ảnh vào thứ đang hiện hữu 
 				
