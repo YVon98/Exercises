@@ -164,12 +164,12 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	+Tìm kiếm sản phẩm
 	+view sản phầm (có phân trang)
 	
-	+tạo order
+	+tạo order (customer name, email, created date and list of products)
 	
 	+xác thực email
 	+link hóa đơn bằng pdf
 	
-	+ngoại lệ cho order 
+	+ngoại lệ cho order ( ngoại lệ cho order vượt quá số lượng có trong kho)
 	
 	+báo cáo bán hàng trong khoảng thời gian nào đó
 	+tải báo cáo bằng excel
@@ -210,6 +210,8 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	${keyword != null ? '?keyword=' + keyword:''}              '?keyword='+${keyword}
 	
+	
+	
 	https://www.youtube.com/watch?v=rFSxmKen6aQ
 	
 	https://o7planning.org/10683/create-a-shopping-cart-web-application-with-spring-boot-hibernate
@@ -225,4 +227,6 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	
 	mail:       https://openplanning.net/11145/spring-email
+	
+	export excel:     https://www.youtube.com/watch?v=BtUdl9pZwR0
 				
