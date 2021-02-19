@@ -214,4 +214,15 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	https://o7planning.org/10683/create-a-shopping-cart-web-application-with-spring-boot-hibernate
 	
+	https://learningprogramming.net/java/spring-mvc/build-shopping-cart-in-spring-mvc/
+	
+	https://saa-solutions.com/student/lession-10-create-shopping-cart-web-application-using-spring-mvc-jquery/  50%
+	
+	
+	https://www.youtube.com/watch?v=U7WDfoiodOg&list=PLGRDMO4rOGcM7B0TsM_-2efML7LAOriWV     them, xoa, sua 
+	
+	https://www.youtube.com/watch?v=n6I992Cb3Jc   70%
+	
+	
+	mail:       https://openplanning.net/11145/spring-email
 				
