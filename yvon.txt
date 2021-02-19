@@ -204,12 +204,14 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	https://helpex.vn/article/pagingandsortingrep-repository-cach-su-dung-voi-thymeleaf-5c54d028507419248c9af81a
 	
 	phan trang:   https://www.youtube.com/watch?v=XjsV3yZ88eE     https://hocspringmvc.net/thuc-hanh-quan-ly-khach-hang-phan-trang-va-tim-kiem/
+	
+	
+	
+	
+	${keyword != null ? '?keyword=' + keyword:''}              '?keyword='+${keyword}
+	
 	https://www.youtube.com/watch?v=rFSxmKen6aQ
 	
-	
-	
-	${keyword != null ? '?keyword=' + keyword:''
-	
-	
+	https://o7planning.org/10683/create-a-shopping-cart-web-application-with-spring-boot-hibernate
 	
 				
