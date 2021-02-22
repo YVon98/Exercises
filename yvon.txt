@@ -182,19 +182,19 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	https://www.cafeit.info/posts/spring-boot/controller-va-restcontroller-su-khac-nhau-giua-2-controller-nay
 	
-	https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql     ---create product
+	//https://www.codejava.net/frameworks/spring-boot/spring-boot-crud-example-with-spring-mvc-spring-data-jpa-thymeleaf-hibernate-mysql     ---create product
 	
 	
-	https://www.codejava.net/frameworks/spring-boot/csv-export-example
+	//https://www.codejava.net/frameworks/spring-boot/csv-export-example
 	
-	https://www.pixeltrice.com/import-the-csv-file-into-mysql-database-using-spring-boot-application/
+	//https://www.pixeltrice.com/import-the-csv-file-into-mysql-database-using-spring-boot-application/
 	
 	doc ghi file csv :     https://gpcoder.com/3107-doc-ghi-file-csv-trong-java/     ////   https://attacomsian.com/blog/spring-boot-upload-parse-csv-file
 	
-	paging:       https://www.codejava.net/frameworks/spring-boot/spring-data-jpa-filter-search-examples
-	https://www.codejava.net/frameworks/spring-boot/spring-data-jpa-paging-and-sorting-examples
+	///paging:       https://www.codejava.net/frameworks/spring-boot/spring-data-jpa-filter-search-examples
+	//https://www.codejava.net/frameworks/spring-boot/spring-data-jpa-paging-and-sorting-examples
 	
-	https://www.youtube.com/watch?v=Q4e_GydUjbs
+	//filter+search    https://www.youtube.com/watch?v=Q4e_GydUjbs
 	
 	
 	https://stackoverflow.com/questions/56241495/how-to-filter-a-page-in-spring-boot-while-keeping-paging
@@ -209,21 +209,22 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	
 	${keyword != null ? '?keyword=' + keyword:''}              '?keyword='+${keyword}
-	https://www.youtube.com/watch?v=ctwRpskAeIU
+	
+	one to many relationship:  https://www.youtube.com/watch?v=ctwRpskAeIU
 	
 	
-	https://www.youtube.com/watch?v=rFSxmKen6aQ
+	shopping cart:  codejava              https://www.youtube.com/watch?v=rFSxmKen6aQ
 	
-	https://o7planning.org/10683/create-a-shopping-cart-web-application-with-spring-boot-hibernate
+	huong dan build:  https://o7planning.org/10683/create-a-shopping-cart-web-application-with-spring-boot-hibernate    80%
 	
-	https://learningprogramming.net/java/spring-mvc/build-shopping-cart-in-spring-mvc/
+	huong dan build: https://learningprogramming.net/java/spring-mvc/build-shopping-cart-in-spring-mvc/        80%
 	
 	https://saa-solutions.com/student/lession-10-create-shopping-cart-web-application-using-spring-mvc-jquery/  50%
 	
 	
 	https://www.youtube.com/watch?v=U7WDfoiodOg&list=PLGRDMO4rOGcM7B0TsM_-2efML7LAOriWV     them, xoa, sua 
 	
-	https://www.youtube.com/watch?v=n6I992Cb3Jc   70%
+------------  learning programming :   	https://www.youtube.com/watch?v=n6I992Cb3Jc   70%
 	
 	
 	mail:       https://openplanning.net/11145/spring-email
@@ -233,4 +234,7 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	
 	tiếp tục  phần order bằng cách thêm hình ảnh vào thứ đang hiện hữu 
+	
+	Building eCommerce Store Using Spring MVC and Spring Data JPA in Spring Boot - Part 7 - Cart
+	
 				
