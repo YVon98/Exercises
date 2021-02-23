@@ -237,4 +237,21 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	Building eCommerce Store Using Spring MVC and Spring Data JPA in Spring Boot - Part 7 - Cart
 	
+	
+	Spring boot | REST API | Shopping cart|Add Cart |Mysql|JPA | part 7
+	
+	
+	 
+	xay dung gio hang   https://www.youtube.com/watch?v=rB1Nh0iXino
+	
+	home==list_product
+	cart===cart
+	
+	
+	
+	
+	
+	
+	
+	
 				
