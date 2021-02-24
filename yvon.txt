@@ -227,13 +227,13 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 ------------  learning programming :   	https://www.youtube.com/watch?v=n6I992Cb3Jc   70%
 	
 	
-	mail:       https://openplanning.net/11145/spring-email
+	mail:       https://openplanning.net/11145/spring-email     dạng email gửi kèm tập tin pdf
 	
 	export excel:     https://www.youtube.com/watch?v=BtUdl9pZwR0
 	
 	
 	
-	tiếp tục  phần order bằng cách thêm hình ảnh vào thứ đang hiện hữu 
+	////tiếp tục  phần order bằng cách thêm hình ảnh vào thứ đang hiện hữu 
 	
 	Building eCommerce Store Using Spring MVC and Spring Data JPA in Spring Boot - Part 7 - Cart
 	
