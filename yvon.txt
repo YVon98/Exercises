@@ -242,7 +242,8 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	
 	 
-	xay dung gio hang   https://www.youtube.com/watch?v=rB1Nh0iXino
+	xay dung gio hang   https://www.youtube.com/watch?v=5vUR4Xbg3Jo
+							https://www.youtube.com/watch?v=rB1Nh0iXino
 	
 	home==list_product
 	cart===cart
