@@ -248,6 +248,10 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	home==list_product
 	cart===cart
 	
+	https://www.java9r.com/2016/05/spring-mvc-and-hibernate-shopping-cart.html
+	
+	làm thế nào để lưu đc giỏ hàng vào db, thì lúc đó mới có thể thanh toán đc. tương đương với phương thức gửi mail xác nhận người mua
+	
 	
 	
 	
