@@ -253,6 +253,18 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	làm thế nào để lưu đc giỏ hàng vào db, thì lúc đó mới có thể thanh toán đc. tương đương với phương thức gửi mail xác nhận người mua
 	
 	
+	order === Cart
+	orderDetail =CartItem
+	https://www.youtube.com/watch?v=lmL6Jl-jvC0    +    https://www.youtube.com/watch?v=xlsbm1ndV28&list=PL0YqB-plTBztaLpcfHon13nBE0FjNVtcx&index=2
+	
+	https://www.youtube.com/watch?v=xCInmqYBP3U&list=PLnQBGpefeAlsNHr8uLBhTio04jG8FS5XI&index=38
+	
+	Loại bỏ session
+	
+	https://toidicodedao.com/about/
+	sẽ như thế nào nếu như không cần dùng session nữa
+	bài toán dễ thở hơn rồi chứ .....heheh
+	
 	
 	
 	
