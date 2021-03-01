@@ -1,0 +1,48 @@
+User:
+- name:
+- password:
+- role: (ADMIN, MEMBER)
+- blocked: (true/false) ==> .....
+
+Song:
+- name
+- artist
+- year
+
+Album:
+- name
+- playlists, songs
+
+Tables:
+User 1 - n Song :
+User 1 - n Album
+Album 1 - n Song
+
+
+MusicManager
+
+entity class
+Dao class ==== repository
+DaoImpl class ====service
+RestServiceUser class ==> path("")
+RestServiceSong class ==> path("")
+RestServiceAlbum class ==> path("")
+bean xml ...
+...
+
+
+ cần học cách kết hợp hibernate +spring boot
+ học cach viết api
+ 
+ https://java2blog.com/spring-boot-hibernate-example/
+ 
+ spring security
+ 
+ 
+ https://www.codejava.net/frameworks/spring-boot/spring-boot-security-role-based-authorization-tutorial
+ https://openplanning.net/11705/tao-ung-dung-login-voi-spring-boot-spring-security-jpa#a15047054
+ 
+ https://www.javainuse.com/spring/boot_security_jdbc_authentication
+ 
+ rest api
+ https://nguyenvanhieu.vn/tao-rest-api-don-gian-voi-spring-boot/
