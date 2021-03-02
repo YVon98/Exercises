@@ -36,7 +36,18 @@ bean xml ...
  
  https://java2blog.com/spring-boot-hibernate-example/
  
- spring security
+ 
+ spring security :      https://www.youtube.com/watch?v=TMUyJonQwXc 99%
+ https://gpcoder.com/5825-tim-hieu-ve-xac-thuc-va-phan-quyen-trong-ung-dung/
+ https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/
+ https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/
+ 
+ 
+ https://stackjava.com/spring/code-vi-du-spring-security-login-voi-jdbc-database-mysql.html
+ https://stackjava.com/spring/code-vi-du-spring-security-max-session.html
+ 
+ 
+ 
  
  
  https://www.codejava.net/frameworks/spring-boot/spring-boot-security-role-based-authorization-tutorial
