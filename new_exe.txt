@@ -28,18 +28,27 @@ RestServiceUser class ==> path("")
 RestServiceSong class ==> path("")
 RestServiceAlbum class ==> path("")
 bean xml ...
-...
+...https://loda.me/assets/static/7.f3b6eda.1d77253.jpg
 
 
  cần học cách kết hợp hibernate +spring boot
- học cach viết api
+/// học cach viết api
  
  https://java2blog.com/spring-boot-hibernate-example/
  
  
+ link git huong dan ve spring security jwt
+ https://github.com/loda-kun/spring-boot-learning/blob/master/spring-security-hibernate-jwt/src/main/java/me/loda/springsecurityhibernatejwt/user/CustomUserDetails.java
+ 
+ 
  spring security :      https://www.youtube.com/watch?v=TMUyJonQwXc 99%
+
+https://openplanning.net/11823/vi-du-oauth2-social-login-trong-spring-boot
+ 
+ 
+ 
  https://gpcoder.com/5825-tim-hieu-ve-xac-thuc-va-phan-quyen-trong-ung-dung/
- https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/
+/// https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/   fail
  https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/
  
  
