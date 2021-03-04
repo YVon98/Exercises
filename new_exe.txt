@@ -2,7 +2,8 @@ User:
 - name:
 - password:
 - role: (ADMIN, MEMBER)
-- blocked: (true/false) ==> .....
+- blocked: (true/false) ==> .....false==block
+								true== open
 
 Song:
 - name
@@ -42,14 +43,21 @@ bean xml ...
  
  
  spring security :      https://www.youtube.com/watch?v=TMUyJonQwXc 99%
+ 
+ 
+//quan trọng:................. https://giaphiep.com/blog/co-che-hoat-dong-cua-spring-security-tat-tan-tat-cac-vi-du-ve-spring-security-12263
+ 
 
 https://openplanning.net/11823/vi-du-oauth2-social-login-trong-spring-boot
- 
+
+
+https://blog.codegym.vn/2020/02/20/huong-dan-ve-spring-security-va-jwt-phan-1/
+https://blog.codegym.vn/2020/02/20/huong-dan-su-dung-spring-boot-security-voi-oauth2/ 
  
  
  https://gpcoder.com/5825-tim-hieu-ve-xac-thuc-va-phan-quyen-trong-ung-dung/
 /// https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/   fail
- https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/
+
  
  
  https://stackjava.com/spring/code-vi-du-spring-security-login-voi-jdbc-database-mysql.html
@@ -64,5 +72,31 @@ https://openplanning.net/11823/vi-du-oauth2-social-login-trong-spring-boot
  
  https://www.javainuse.com/spring/boot_security_jdbc_authentication
  
+ 
+ 
+ 
  rest api
  https://nguyenvanhieu.vn/tao-rest-api-don-gian-voi-spring-boot/
+ 
+ one-to-many-relationship
+ https://www.javaguides.net/2019/08/spring-boot-jpa-hibernate-one-to-many-example-tutorial.html
+	
+ 
+ 
+ 
+ 
+ https://kipalog.com/posts/Hu-o--ng-da--n-Spring-Security---Jpa-Hibernate .....kết hợp với 1 bản kết nối csdl: có link github
+ https://openplanning.net/11543/tao-ung-dung-login-voi-spring-boot-spring-security-spring-jdbc .......... no source
+ 
+ https://www.codejava.net/frameworks/spring-boot/spring-boot-security-authentication-with-jpa-hibernate-and-mysql ..... video+source
+ 
+ https://o7planning.org/11705/create-a-login-application-with-spring-boot-spring-security-jpa
+ 
+ 
+ 
+ https://www.codejava.net/frameworks/spring-boot/spring-boot-security-role-based-authorization-tutorial ..... video+source 
+ 
+ https://www.youtube.com/watch?v=SpBHdWvRKZ8
+ 
+ 
+ cụm từ quan trọng trong việc tìm kiếm authorization-authentication :  spring-boot-security-role-based-authorization
