@@ -94,9 +94,15 @@ https://blog.codegym.vn/2020/02/20/huong-dan-su-dung-spring-boot-security-voi-oa
  
  
  
+ 
+ 
  https://www.codejava.net/frameworks/spring-boot/spring-boot-security-role-based-authorization-tutorial ..... video+source 
  
  https://www.youtube.com/watch?v=SpBHdWvRKZ8
  
  
  cụm từ quan trọng trong việc tìm kiếm authorization-authentication :  spring-boot-security-role-based-authorization
+ 
+ 
+ sound html,  https://stackoverflow.com/questions/31533083/how-can-i-upload-and-retrieve-files-image-audio-and-video-in-spring-mvc
+ 
