@@ -106,3 +106,7 @@ https://blog.codegym.vn/2020/02/20/huong-dan-su-dung-spring-boot-security-voi-oa
  
  sound html,  https://stackoverflow.com/questions/31533083/how-can-i-upload-and-retrieve-files-image-audio-and-video-in-spring-mvc
  
+ 
+ 
+ đang ngừng ở bước số 9: .............https://openplanning.net/11705/tao-ung-dung-login-voi-spring-boot-spring-security-jpa#a13944416
+ 
