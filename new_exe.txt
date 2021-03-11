@@ -15,9 +15,21 @@ Album:
 - playlists, songs
 
 Tables:
-User 1 - n Song :
+User 1 - n Song
 User 1 - n Album
 Album 1 - n Song
+
+
+Admin:
+** SONG **
+ - A Song
+ - B Song
+
+** ALBUM ** 
+  - TTA
+    + A Song
+	+ B Song
+ 
 
 
 MusicManager
