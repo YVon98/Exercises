@@ -41,13 +41,18 @@ RestServiceUser class ==> path("")
 RestServiceSong class ==> path("")
 RestServiceAlbum class ==> path("")
 bean xml ...
-...https://loda.me/assets/static/7.f3b6eda.1d77253.jpg
+
+////   ...https://loda.me/assets/static/7.f3b6eda.1d77253.jpg   /////
 
 
- cần học cách kết hợp hibernate +spring boot
-/// học cach viết api
+//// cần học cách kết hợp hibernate +spring boot
+/// học cach viết api ///
  
- https://java2blog.com/spring-boot-hibernate-example/
+  Spring Boot Hibernate example:........ https://java2blog.com/spring-boot-hibernate-example/ .....
+  
+ 
+ ----------------------------------------------------------------------------------------------------------------------
+ 
  
  
  link git huong dan ve spring security jwt
@@ -56,37 +61,25 @@ bean xml ...
  
  spring security :      https://www.youtube.com/watch?v=TMUyJonQwXc 99%
  
- 
 //quan trọng:................. https://giaphiep.com/blog/co-che-hoat-dong-cua-spring-security-tat-tan-tat-cac-vi-du-ve-spring-security-12263
- 
 
 https://openplanning.net/11823/vi-du-oauth2-social-login-trong-spring-boot
-
 
 https://blog.codegym.vn/2020/02/20/huong-dan-ve-spring-security-va-jwt-phan-1/
 https://blog.codegym.vn/2020/02/20/huong-dan-su-dung-spring-boot-security-voi-oauth2/ 
  
- 
  https://gpcoder.com/5825-tim-hieu-ve-xac-thuc-va-phan-quyen-trong-ung-dung/
-/// https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/   fail
+/// https://loda.me/huong-dan-spring-security-jwt-json-web-token-hibernate-loda1556683105052/   .....fail
 
- 
- 
  https://stackjava.com/spring/code-vi-du-spring-security-login-voi-jdbc-database-mysql.html
  https://stackjava.com/spring/code-vi-du-spring-security-max-session.html
  
- 
- 
- 
- 
- https://www.codejava.net/frameworks/spring-boot/spring-boot-security-role-based-authorization-tutorial
- https://openplanning.net/11705/tao-ung-dung-login-voi-spring-boot-spring-security-jpa#a15047054
- 
+ https://www.codejava.net/frameworks/spring-boot/spring-boot-security-role-based-authorization-tutorial .....successful
+ https://openplanning.net/11705/tao-ung-dung-login-voi-spring-boot-spring-security-jpa#a15047054 .....successful
  
  https://www.javainuse.com/spring/boot_security_jdbc_authentication   +  có source
  
- 
- 
+ ---------------------------------------------------------------------------------------------------------------------------------------
  
  rest api
  https://nguyenvanhieu.vn/tao-rest-api-don-gian-voi-spring-boot/
@@ -142,3 +135,38 @@ https://blog.codegym.vn/2020/02/20/huong-dan-su-dung-spring-boot-security-voi-oa
  
  source code on github : https://www.javacodegeeks.com/2017/10/secure-spring-boot-rest-api-using-basic-authentication.html         //////
  
+ 
+ 
+ 
+ encode password:   https://www.appsdeveloperblog.com/encrypt-user-password-with-spring-security/    ////pass
+ cac phuong phap ma hoa/ giai ma: https://www.baeldung.com/java-base64-encode-and-decode
+ 
+ 
+ 
+ //////them du lieu phu thuoc :https://www.javacodemonk.com/difference-between-getone-and-findbyid-in-spring-data-jpa-3a96c3ff   /// sẽ cần dùng đến trong việc thêm xóa xửa 
+ 
+ ////// thực hiện việc thêm xóa xửa thành công,
+/////// sau đó thực hiện vuệc cập nhật mật khẩu đã mã hóa xuống database, 
+////// bước tiếp đến là phân biệt dữ liệu insert vào trong database để xem liệu chúng đã tồn tại hay chưa ..hướng giải quyết là dựa trên hashCode và equals
+
+
+
+/////phần mẫu thực hiện bài   ....  https://www.youtube.com/watch?v=AbGxZmfWulU
+
+
+https://asbnotebook.com/2019/09/10/jpa-one-to-many-example-spring-boot/
+
+
+
+
+/////cụm từ tìm kiếm: spring data jpa - one to many and join query
+
+
+JPA / Hibernate One to Many Mapping Example with Spring data jpa
+
+
+13 - What is Entity Manager and How to use with Spring MVC? | #Entity​ Manager | #JPA​ | #Hibernate:   https://www.youtube.com/watch?v=Rdkhth4xNfI
+  
+Spring MVC + Spring Data JPA + Hibernate - CRUD Example:   https://www.codejava.net/frameworks/spring/spring-mvc-spring-data-jpa-hibernate-crud-example
+
+
