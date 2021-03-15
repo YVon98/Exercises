@@ -1,0 +1,44 @@
+
+
+User:
+ - id_user
+ - user
+ - pass
+ - role
+
+Store:
+ - id_store
+ - name
+ - phone
+ - status
+ - date
+
+Menu:
+ - id_menu
+ - name:
+ - price: 20k
+ - status: true/false
+ - image: resources/tradao.png
+ - date: getTime() 1023459469464
+ - id_store:
+
+Order:
+ - id_order
+ - id_user
+ - id_menu
+ - status
+
+	upload and view image  : https://www.pixeltrice.com/image-gallery-spring-boot-application-using-mysql-and-thymeleaf/
+	vấn đề bài toán: load hình ảnh và lưu hình hình ảnh vào đúng db
+	https://www.codejava.net/frameworks/spring-boot/spring-boot-file-upload-tutorial
+	https://www.youtube.com/watch?v=-Xf_fbKQit8
+	hot key:   saving image using jpa
+	
+	https://www.youtube.com/watch?v=oTJ89wcz5Ec --100% : quá nhiều lớp thực hiện
+	https://grokonez.com/spring-framework/spring-data/springjpa-save-filesimages-mysql-database-lob-annotation
+	https://congdongjava.com/forum/threads/java-import-v%C3%A0-export-file-%E1%BA%A3nh-v%E1%BB%9Bi-db.15868/ 
+	
+	upload picture: https://www.youtube.com/watch?v=ZW2BuVCqL0A    +    https://www.youtube.com/watch?v=x8gMJwVBhxU
+	
+	https://www.codejava.net/frameworks/spring-boot/spring-boot-file-upload-tutorial  /// sử dụng mẫu này
+	https://www.youtube.com/watch?v=xv9JdfcKH9U .... xúc tích so với những mẫu còn lại

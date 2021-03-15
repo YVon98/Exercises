@@ -217,7 +217,7 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	
 	huong dan build:  https://o7planning.org/10683/create-a-shopping-cart-web-application-with-spring-boot-hibernate    80%
 	
-	huong dan build: https://learningprogramming.net/java/spring-mvc/build-shopping-cart-in-spring-mvc/        80%
+	huong dan build: https://learningprogramming.net/java/spring-mvc/build-shopping-cart-in-spring-mvc/        80% (có hình ảnh)
 	
 	https://saa-solutions.com/student/lession-10-create-shopping-cart-web-application-using-spring-mvc-jquery/  50%
 	
@@ -248,7 +248,7 @@ Sping Boot		https://www.javatpoint.com/restful-web-services-spring-boot
 	home==list_product
 	cart===cart
 	
-	https://www.java9r.com/2016/05/spring-mvc-and-hibernate-shopping-cart.html
+///  áp dụng cho phần order   	https://www.java9r.com/2016/05/spring-mvc-and-hibernate-shopping-cart.html
 	
 	làm thế nào để lưu đc giỏ hàng vào db, thì lúc đó mới có thể thanh toán đc. tương đương với phương thức gửi mail xác nhận người mua
 	
