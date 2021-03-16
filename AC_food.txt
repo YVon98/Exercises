@@ -42,3 +42,12 @@ Order:
 	
 	https://www.codejava.net/frameworks/spring-boot/spring-boot-file-upload-tutorial  /// sử dụng mẫu này
 	https://www.youtube.com/watch?v=xv9JdfcKH9U .... xúc tích so với những mẫu còn lại
+	
+	
+	https://www.youtube.com/watch?v=znjhY71F-8I ....dễ hiểu nhất + https://github.com/chargeahead/UploadDownloadDatabase
+	
+	
+	
+	https://stackoverflow.com/questions/60874967/java-spring-content-type-multipart-form-databoundary-charset-utf-8-not-supp
+	
+	lấy ngày tháng hiện tại :@Temporal(TemporalType.DATE)
