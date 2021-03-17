@@ -4,7 +4,10 @@ User:
 - role: (ADMIN, MEMBER)
 - blocked: (true/false) ==> .....false==block
 								true== open
-
+								
+								
+																					project name: new
+																					path: C:\Users\tnyvon\workspace-spring-tool-suite-4-4.9.0.RELEASE\new
 Song:
 - name
 - artist

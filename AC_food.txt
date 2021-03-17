@@ -51,3 +51,9 @@ Order:
 	https://stackoverflow.com/questions/60874967/java-spring-content-type-multipart-form-databoundary-charset-utf-8-not-supp
 	
 	lấy ngày tháng hiện tại :@Temporal(TemporalType.DATE)
+	------------------------------------------------------------------------------------------------------- đã hoàn thành phần store ảnh vào db
+	
+	giỏ hàng
+	
+	https://www.youtube.com/watch?v=avIQEyG3U88
+	
