@@ -55,5 +55,14 @@ Order:
 	
 	giỏ hàng
 	
-	https://www.youtube.com/watch?v=avIQEyG3U88
+	https://www.youtube.com/watch?v=avIQEyG3U88 
 	
+	
+	https://www.youtube.com/watch?v=26jjDCFsl6E
+	
+	
+	mẫu hay cho order: https://github.com/mkain0/shopping-cart
+	
+	
+	
+	Học trên trang youtube này : https://www.youtube.com/watch?v=mMBSb-SJ5qE&list=PLaHtow4EYl5yDTf96j7nXjvKpdXx4tczg
