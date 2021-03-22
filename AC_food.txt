@@ -65,4 +65,9 @@ Order:
 	
 	
 	
-	Học trên trang youtube này : https://www.youtube.com/watch?v=mMBSb-SJ5qE&list=PLaHtow4EYl5yDTf96j7nXjvKpdXx4tczg
+	Học trên trang youtube này : https://www.youtube.com/watch?v=mMBSb-SJ5qE&list=PLaHtow4EYl5yDTf96j7nXjvKpdXx4tczg   ++
+	https://github.com/programmerpraveenkumar/shoppingcart_spring_boot
+	
+	
+	
+	https://dev.to/nilmadhabmondal/let-s-develop-shopping-cart-for-ecommerce-app-5f0h  + +	https://github.com/webtutsplus/ecommerce-backend
