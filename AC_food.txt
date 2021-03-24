@@ -79,7 +79,9 @@ Order:
 	https://github.com/mightyjava/book-rest-api-spring-security + video: https://www.youtube.com/watch?v=4j1u7CISAgI
 	
 	
-	
+	SQL
+	https://comdy.vn/sql-server/loc-du-lieu-trong-sql-server/   
+	https://quantrimang.com/dieu-kien-between-trong-sql-server-147775
 	
 	
 	
