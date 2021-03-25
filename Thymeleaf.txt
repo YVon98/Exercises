@@ -1,0 +1,6 @@
+	thymeleaf:  
+		@{}: form action
+		${} : hiển thị giá trị attribute
+		#{} : display value from property file (Message Source)
+		
+		

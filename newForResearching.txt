@@ -1,0 +1,11 @@
+cấu hình và sử dụng 2 nguồn csdl
+https://helpex.vn/question/spring-boot-cau-hinh-va-su-dung-hai-nguon-du-lieu-5cbd98b4ae03f64844b684e8
+
+
+lưu trữ người đăng nhập gần nhất 
+
+
+multipart: dùng cho upload file
+
+
+https://thorben-janssen.com/key-jpa-hibernate-annotations/
