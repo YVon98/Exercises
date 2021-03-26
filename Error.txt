@@ -8,7 +8,10 @@
 		
 	}
 	
-	********* Response Statuses for Errors
+	********* Response Statuses for Errors       
+	
+	https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+	
 	Use appropriate status code based on the error.
 
 		404 - RESOURCE NOT FOUND
