@@ -83,7 +83,12 @@ Order:
 	https://comdy.vn/sql-server/loc-du-lieu-trong-sql-server/   
 	https://quantrimang.com/dieu-kien-between-trong-sql-server-147775
 	
-	chạy lại code ngày 24
+	
+	
+	chạy lại code ngày 24: completed
+	
+	them gio hang
+	chay lai tu dau
 	
 	
 	
