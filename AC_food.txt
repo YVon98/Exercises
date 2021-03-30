@@ -89,6 +89,14 @@ Order:
 	
 	them gio hang
 	chay lai tu dau
-	
-	
-	
+		
+		saveToDB-21-03-29-11h48: is full function
+		
+		xóa các dòng code chú thích, command lại code  saveToDB-21-03-30 
+		
+		viết document
+		
+		
+		
+		
+		
