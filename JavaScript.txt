@@ -1,4 +1,6 @@
 
+
+	video for learning: https://www.youtube.com/watch?v=PkZNo7MFNFg
 	
 	một số thành phần có cách sử dụng như java: sử dụng // để chú thích, cách khai báo vòng lặp và điều kiện rẽ nhánh if
 	In HTML, JavaScript code is inserted between <script> and </script> tags.
@@ -44,3 +46,12 @@ onload	The browser has finished loading the page
 	(Local variables must be declared with the var keyword or the let keyword, otherwise they will become global variables)
 	- Nên giảm thiểu các statement trong vòng lặp để giảm thiểu yếu tố cản trở hiệu suất của vòng lặp
 	- Không có ý định lưu kết quả thì không nên tạo biến
+	
+	
+	
+	- DOM là cách mà JS giao tiếp với HTML (Document Object Model – tạm dịch Mô hình Các Đối tượng Tài liệu)
+	- Global scope nằm ngoài block
+	- "===" say no with convert data type
+	
+	
+	
