@@ -1,0 +1,13 @@
+	\
+	\\https://www.youtube.com/watch?v=Mi1e8AdNOVk&list=PLRhlTlpDUWsw70vZAkJgALJ1yhgYsqDGx&index=5
+	\\\https://www.w3schools.com/angular/angular_directives.asp
+	
+	AngularJS:
+		- Để sử dụng AngularJS, ta cần khai báo tương tự JQuery (thêm vào file html bằng thẻ <script>)
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		
+		- Mở rộng HTML với các directives:	- The ng-app directive defines an AngularJS application
+											- The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+											- The ng-bind directive binds application data to the HTML view
+		
+		- Diredtive ở đây là tạo ra cái mới (tag, attribute, css, comment)

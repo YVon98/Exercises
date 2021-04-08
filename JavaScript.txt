@@ -1,6 +1,6 @@
 
 
-	video for learning: https://www.youtube.com/watch?v=PkZNo7MFNFg
+	**********video for learning: https://www.youtube.com/watch?v=PkZNo7MFNFg
 	
 	một số thành phần có cách sử dụng như java: sử dụng // để chú thích, cách khai báo vòng lặp và điều kiện rẽ nhánh if
 	In HTML, JavaScript code is inserted between <script> and </script> tags.
