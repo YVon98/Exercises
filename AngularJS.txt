@@ -1,5 +1,5 @@
 	\
-	\\https://www.youtube.com/watch?v=Mi1e8AdNOVk&list=PLRhlTlpDUWsw70vZAkJgALJ1yhgYsqDGx&index=5
+	\\https://www.youtube.com/watch?v=LjTY57uhtbw&list=PLRhlTlpDUWsw70vZAkJgALJ1yhgYsqDGx&index=7
 	\\\https://www.w3schools.com/angular/angular_directives.asp
 	
 	AngularJS:
