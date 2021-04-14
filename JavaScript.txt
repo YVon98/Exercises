@@ -54,4 +54,53 @@ onload	The browser has finished loading the page
 	- "===" say no with convert data type
 	
 	
+	- Có thể gọi giá trị của biến trong console bằn cách sử dụng: ${}
+		tuy nhiên nên nhớ dấu ``. ví dụ: 
+										var myName = 'von';
+										var myCity = 'hcm';
+										console.log(`My name is ${myName}. My favorite city is ${myCity}.`);
+	- Điều kiện if rút gọn: 
+								ví dụ:
+								let defaultName;
+								if (username) {
+									defaultName = username;
+								} else {
+									defaultName = 'Stranger';
+								}
+								sẽ tương tự với:    let defaultName = username || 'Stranger';
+							
+	- Ternary Operator (toán tử 3 bậc): 
+								ví dụ:   isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
+	- Chú ý trong câu điều kiện: so sánh dùng "==="
+								ví dụ: 
+								let stopLight = 'yellow';
+ 
+								if (stopLight === 'red') {
+									console.log('Stop!');
+								} else if (stopLight === 'yellow') {
+									console.log('Slow down.');
+								} else if (stopLight === 'green') {
+									console.log('Go!');
+								} else {
+									console.log('Caution, unknown!');
+								}
+								
+	- Hàm ẩn danh(cách khác để khai báo hàm): 	
+								vd: const plantNeedsWater = function(day) {/*các logic đc thực hiện ở đây */};
+	
+	- Arrow Functions: ví dụ từ hàm ẩn danh trên ta có thể khai báo dưới dạng sau đây:
+								const plantNeedsWater =(day) => {/*các logic đc thực hiện ở đây */};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
