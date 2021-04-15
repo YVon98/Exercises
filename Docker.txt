@@ -11,7 +11,7 @@
 		- Images: là 1 khuôn mẫu để tạo container.
 		
 		- Container: là một instance của image (có thể create, start, stop, move or delete container dựa trên Docker API hoặc Docker CLI)
-		
+		https://nickjanetakis.com/assets/blog/dockers-architecture-6c296cdac053f794eabed5ddda5c04ba7110c746687a0e8b88ba6df919415175.jpg
 		- Quy trình thực thi của một hệ thống khi sử dụng Docker:
 			+ Build: tạo một DockerFile(code của chúng ta) đc build tại một máy đã cài đặt Docker Engine, khi build xong Container này chứa ứng dụng kèm bộ thư viện của chúng ta.
 			+ Push: push Container này lên cloud và lưu trên đó.
