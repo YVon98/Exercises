@@ -43,14 +43,57 @@ onload	The browser has finished loading the page
 		+ indexOf(a): tìm vị trí của a
 		
 	- Object: {}
-		+ let spaceship = {
-			'Fuel Type' : 'Turbo Fuel',
-			homePlanet : 'Earth',
-			color: 'silver',
-			'Secret Mission' : 'Discover life outside of Earth.'
-			};
-		thuộc tính	'Fuel Type' đc đặt trong dấu '' bởi vì nó có kí tự đặt biêt (khoảng trắng)
+			ví dụ:  let spaceship = {
+					'Fuel Type' : 'Turbo Fuel',
+					homePlanet : 'Earth',
+					color: 'silver',
+					'Secret Mission' : 'Discover life outside of Earth.'
+					};
+				thuộc tính	'Fuel Type' đc đặt trong dấu '' bởi vì nó có kí tự đặt biêt (khoảng trắng)
+				khi tham chiếu thuộc tính loại này, phải để nó vào []..........ví dụ: spaceship['Fuel Type']
+		+ delete: Xóa 1 thuộc tính
+		+ method trong object:
+				ví dụ: tạo 1 đối tượng alienShip bao gồm hàm retreat()
+					
+					let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
+					let alienShip = {
+						retreat(){
+							console.log(retreatMessage);
+						}
+					}
+		+ vòng lặp trong đối tượng: for in
+		+ Truy cập thuộc tính:
+				đối tượng truy cập 1 thuộc tính là function thì sẽ có()
+				đối tượng truy cập 1 thuộc tính là getter, setter thì k cần ()
+					
+		+ Cách truy cặp thuộc tính khác:
 			
+			const robot = {
+				model: '1E78V2',
+				energyLevel: 100,
+				functionality: {
+					beep() {
+						console.log('Beep Boop');
+					},
+					fireLaser() {
+						console.log('Pew Pew');
+					},
+				}
+			};
+			
+
+			const {functionality} = robot ;
+			robot.functionality.beep();
+		
+		+ Object key (truy cập vào thuôc tính của đối tượng): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+		+ Object entry (truy cập vào đối tượng)   : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+		+ Object assign (sao chép từ đối tượng source qua target): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+	
+	- Class: cách ứng xử của class tương ứng java////
+		+ Inheritance: dùng extends.
+	
+	
+		
 	
 	- để thêm 1 list đối tượng, cần thực hiện 2 bước
 		+ Khai báo list dưới dạng chuỗi,
