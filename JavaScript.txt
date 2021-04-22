@@ -92,6 +92,10 @@ onload	The browser has finished loading the page
 	- Class: cách ứng xử của class tương ứng java////
 		+ Inheritance: dùng extends.
 	
+	- Promise Object:
+	
+	
+	
 	
 		
 	
@@ -247,10 +251,40 @@ onload	The browser has finished loading the page
 			.reduce() iterates through an array and takes the values of the elements and returns a single value.
 			All iterator methods takes a callback function that can be pre-defined, or a function expression, or an arrow function.
 			You can visit the Mozilla Developer Network to learn more about iterator methods (and all other parts of JavaScript!).)
-		
-	-------tips:
+	
+	- Gỡ bỏ lỗi bất đồng bộ:
+	
+		+ async...await is syntactic sugar built on native JavaScript promises and generators.
+		+ We declare an async function with the keyword async.
+		+ Inside an async function we use the await operator to pause execution of our function until an asynchronous action completes and the awaited promise is no longer pending .
+		+ await returns the resolved value of the awaited promise.
+		+ We can write multiple await statements to produce code that reads like synchronous code.
+		+ We use try...catch statements within our async functions for error handling.
+		+ We should still take advantage of concurrency by writing async functions that allow asynchronous actions to happen in concurrently whenever possible.
+	
+		ví dụ:
+				let {cookBeans, steamBroccoli, cookRice, bakeChicken} = require('./library.js');
+
+				async function serveDinnerAgain(){
+				let foodArray = await Promise.all([steamBroccoli(), cookRice(), bakeChicken(), cookBeans()]); 
+  
+				console.log(`Dinner is served. We're having ${foodArray[0]}, ${foodArray[1]}, ${foodArray[2]}, and ${foodArray[3]}.`);
+				}
+
+				serveDinnerAgain();
+
+				
+	- Request:  https://content.codecademy.com/courses/intermediate-javascript-requests/diagrams/XHR%20GET%20transparent.svg
+
+
+	
+	
+			-------tips---------:
 				+ sử dụng const khi biến khai báo là 1 hàm (hàm ẩn danh, hàm mũi tên, hàm rút gọn,..)
 				+ sử dụng let khi biến tham gia vào vòng lặp, biến là đối tượng
+				+ từ ES5 đã k còn sử dụng const và let, mà chuyển sang dùng hoàn toàn var
+				+ để cover giữa các phiên bản JavaScript thì ta sử dụng Babel
+				
 	
 	
 	

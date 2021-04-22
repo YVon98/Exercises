@@ -1,0 +1,23 @@
+
+
+		GIT:
+		
+		- There are two types of VCS:
+			+ Centralized Version Control System (CVCS)
+			+ Distributed Version Control System (DVCS)
+		- READ ME: chứa mô tả về các tệp của bạn	
+			https://www.youtube.com/watch?v=xuB1Id2Wxak&t=249s
+			
+			
+			Checkout branch: anvGit clone checkout <branch-name>
+			
+			Sync code with master:
+			Step 1. Pull code: anvGit exec git pull
+			Step 2. Sync code with master: anvGit syncUpdatesFromIntBranch
+			Step 3. Push code: anvGit exec git push
+			
+			Commit code:
+			Step 1. Check different: git diff .
+			Step 2. git add .
+			Step 3. git commit -m "ID ticket - Summary". Ex: git commit -m "FNMS-81621 The NV model for 02.01.09 has some issues as it is sending different requests for the attached cell stat"
+			Step 4. git push

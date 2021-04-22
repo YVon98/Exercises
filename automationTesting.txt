@@ -1,0 +1,63 @@
+
+
+	automation testing
+		
+		- Cấu trúc điển hình của ato fwd:
+			+ Hight level:
+				NAV-Env
+				NAC-Env
+			+ Technology/ Utilities
+				Auto-Env
+					Netconf
+					Docker
+					HTTP
+					Utilities
+					WebUI
+			+ Libraries:
+				Netconf
+				Docker
+				HTTP
+				Utilities
+				WebLibs
+					SSH
+					XML/JSON
+		
+		
+		- RF DOC:
+				chú ý đến pom.xml
+				http://jeldoclet.sourceforge.net/
+		
+		- Project Structure:
+			+ Congigurations (Mandatory) :
+				/src/test/resource/configuration
+			
+			+ Test case:
+				/src/test/robotframework/acceptance/tests/ac
+	
+			
+			+ Prerequisites and Teardown :
+				/src/test/robotframework/acceptance/tests/preriquisites
+				/src/test/robotframework/acceptance/tests/teardown
+				
+			+ Keywords:
+				/src/test/robotframework/acceptance/tests/NetconfKeywords
+				/src/test/robotframework/acceptance/tests/RestConfKeywords
+				/src/test/robotframework/acceptance/tests/WebKeywords
+				
+			+ Resource (Mandatory):
+				./src/test/robotframework/acceptance/tests/testManagement/resource/testdata/data/EPG/AC/requests
+				./src/test/robotframework/acceptance/tests/testManagement/resource/testdata/data/EPG/AC/responses
+				./src/test/robotframework/acceptance/tests/testManagement/resource/testdata/data/EPG/AC/setup
+				./src/test/robotframework/acceptance/tests/testManagement/resource/testdata/data/EPG/AC/WebElementIdentifier
+		
+		- Layers of configuration:
+			
+		
+		- Build mechanism
+		
+		
+		- Demo on NAC keywork
+		
+		- Tip and tricks
+		
+		- Query
