@@ -1,0 +1,349 @@
+
+
+	netconf + yang:
+	
+	https://tools.ietf.org/html/rfc6241#page-10
+	netconf: cung cấp cơ chế cài đặt, thao tác và xóa cấu hình của các thiết bị mạng
+	
+	RPC: là một mô hình đc sử dụng trong trong giao thức netconf (client: 1 tập lệnh hoặc ứng dụng; server: thường là một thiết bị mạng)
+	- Tách dữ liệu cấu hình và trạng thái dữ liệu:
+		+ dữ liệu cấu hình: là tập dữ liệu có thể ghi được yêu cầu để chuyển đổi một hệ thống từ trạng thái mặc định ban đầu sang trạng thái hiện tại
+		++
+	- XML Considerations
+		+ Format: XML
+		+ Namespace: All NETCONF protocol elements are defined in the following namespace:
+			urn:ietf:params:xml:ns:netconf:base:1.0
+			NETCONF capability names MUST be URIs [RFC3986]
+		+ Document Type Declarations: Document type declarations (see Section 2.8 of [W3C.REC-xml-20001006]) MUST NOT appear in NETCONF content
+		
+	- RPC Model: Giao thức NETCONF sử dụng mô hình giao tiếp dựa trên RPC
+		+ <rpc>: sử dụng để đính kèm một yêu cầu NETCONF được gửi từ máy khách đến máy chủ
+		+ <rpc-reply>: được gửi để phản hồi lại một thông báo <rpc>
+		+ <rpc-error>: được gửi trong các thông báo <rpc-reply> nếu có lỗi xảy ra trong quá trình xử lý một yêu cầu <rpc>.
+		+ <ok>: được gửi trong các thông báo <rpc-reply> nếu không có lỗi hoặc cảnh báo nào xảy ra trong quá trình xử lý yêu cầu <rpc> và không có dữ liệu nào được trả lại từ hoạt động
+		+ Pipelining: Yêu cầu NETCONF <rpc> PHẢI được thiết bị quản lý xử lý tuần tự.  Yêu cầu <rpc> bổ sung CÓ THỂ được gửi trước khi những yêu cầu trước đó được hoàn thành.  Thiết bị được quản lý CHỈ PHẢI gửi phản hồi theo thứ tự nhận được yêu cầu.
+	
+	- Configuration Model: 
+		+ Configuration Datastores: là tập hợp dữ liệu cấu hình hoàn chỉnh được yêu cầu để đưa một thiết bị từ trạng thái mặc định ban đầu sang trạng thái hoạt động mong muốn
+		+ Data Modeling: Các vấn đề về mô hình hóa dữ liệu và nội dung nằm ngoài phạm vi của giao thức NETCONF
+	
+	- Subtree Filtering: 
+		+ Subtree Filter Components: bao gồm các phần tử xml và các thuộc tính xml của chúng, 5 loại có thể tồn tại
+			. Namespace Selection: Một vùng tên được coi là phù hợp (cho mục đích lọc) nếu vùng tên XML được liên kết với một nút cụ thể trong phần tử <filter> giống như trong mô hình dữ liệu cơ bản
+				 Example:
+					 <filter type="subtree">
+					   <top xmlns="http://example.com/schema/1.2/config"/>
+					 </filter>
+			
+			. Attribute Match Expressions:
+				Example:
+
+					 <filter type="subtree">
+					   <t:top xmlns:t="http://example.com/schema/1.2/config">
+						 <t:interfaces>
+						   <t:interface t:ifName="eth0"/>
+						 </t:interfaces>
+					   </t:top>
+					 </filter>
+			
+			. Containment Nodes: Các nút có chứa các phần tử con trong bộ lọc cây con được gọi là "các nút chứa"
+				Example:
+
+					 <filter type="subtree">
+					   <top xmlns="http://example.com/schema/1.2/config">
+						 <users/>
+					   </top>
+					 </filter>
+
+				   In this example, the <top> element is a containment node.
+			
+			. Selection Nodes:
+				 Example:
+
+					 <filter type="subtree">
+					   <top xmlns="http://example.com/schema/1.2/config">
+						 <users/>
+					   </top>
+					 </filter>
+					 
+				Trong ví dụ này, phần tử <top> là nút chứa và phần tử <users> là nút lựa chọn.  Chỉ các nút "người dùng" trong không gian tên "http://example.com/schema/1.2/config" xuất hiện trong phần tử <top> là gốc của kho dữ liệu cấu hình mới được đưa vào đầu ra của bộ lọc.
+					 
+			. Content Match Nodes:
+
+		+ Subtree Filter Processing: áp dụng đệ quy cho các tập hợp anh chị em của mỗi nút được chọn
+		+ Subtree Filtering Examples:
+			. No Filter: Bỏ bộ lọc trên thao tác <get> trả về toàn bộ mô hình dữ liệu.
+				<rpc message-id="101"
+					  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+				   <get/>
+				</rpc>
+
+				<rpc-reply message-id="101"
+					  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+				   <data>
+					 <!-- ... entire set of data returned ... -->
+				   </data>
+				</rpc-reply>
+				
+			. Empty Filter: Một bộ lọc trống sẽ không chọn gì vì không có nút chọn hoặc khớp nội dung nào
+			
+				<rpc message-id="101"
+					  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+				   <get>
+					 <filter type="subtree">
+					 </filter>
+				   </get>
+				</rpc>
+				<rpc-reply message-id="101"
+					  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+				   <data>
+				   </data>
+				</rpc-reply>
+			. Select the Entire <users> Subtree: 
+			. Select All <name> Elements within the <users> Subtree:
+			. One Specific <user> Entry:
+			. Specific Elements from a Specific <user> Entry
+			. Multiple Subtrees
+			. Elements with Attribute Naming
+			
+	- Protocol Operations: Giao thức cơ sở đc bao gồm các hoạt động giao thức sau
+	
+			o  get
+
+			o  get-config
+
+			o  edit-config
+
+			o  copy-config
+
+			o  delete-config
+
+			o  lock
+
+			o  unlock
+
+			o  close-session
+
+			o  kill-session
+			
+	- Capabilities: Phần này xác định một tập hợp các khả năng mà máy khách hoặc máy chủ CÓ THỂ triển khai
+		+ Capabilities Exchange: 
+		+ Writable-Running Capability:
+			. Description:thiết bị hỗ trợ các hoạt động <edit-config> và <copy-config> trong đó cấu hình <running> là đích.
+			. Dependencies: None
+			. Capability Identifier: 
+					khả năng ":writable-running" có thể ghi được xác định bởi chuỗi khả năng sau:
+						urn:ietf:params:netconf:capability:writable-running:1.0
+			. New operation: None
+			. Modifications to Existing Operations:
+				, <edit-config>: ":writable-running" có thể sửa đổi <edit-config> để chấp nhận <running> như là 1 <target>
+				, <copy-config>: ":writable-running" có thể sửa đổi <copy-config> để chấp nhận <running> như là 1 <target>
+				
+		+ Candidate Configuration Capability: Cấu hình ứng viên là một tập dữ liệu cấu hình đầy đủ đóng vai trò là nơi làm việc để tạo và xử lý dữ liệu cấu hình
+			. Dependencies: None
+			. Capability Identifier: ":candidate" đc xác định như sau
+											urn:ietf:params:netconf:capability:candidate:1.0
+			. New Operations:
+				, <commit>: Để xác nhận cấu hình ứng viên làm cấu hình hiện tại mới của thiết bị
+				, <discard-changes>: để hoàn nguyên cấu hình ứng viên về cấu hình đang chạy hiện tại
+			. Modifications to Existing Operations:
+				, <get-config>, <edit-config>, <copy-config>, and <validate>:
+				, <lock> and <unlock>:
+		
+		+ Confirmed Commit Capability: ":confirmed-commit:1.1" chỉ ra rằng máy chủ sẽ hỗ trợ hoạt động <cancel-commit> và các thông số <confirm>, <confirm-timeout>, <persist> và <persist-id> cho hoạt động <commit>
+			. Dependencies:: ":confirmed-commit:1.1" chỉ phù hợp nếu ":candidate" đc hổ trợ
+			. Capability Identifier: ":confirmed-commit:1.1" đc xác định bởi chuỗi sau: 
+													urn:ietf:params:netconf:capability:confirmed-commit:1.1
+			. New operations: 
+				, <cancel-commit>: 
+					The :confirmed-commit:1.1 capability allows 4 additional parameters to the <commit> operation.
+
+				   Parameters:
+
+					  confirmed:
+
+							Perform a confirmed <commit> operation.
+
+					  confirm-timeout:
+
+							Timeout period for confirmed commit, in seconds.  If
+							unspecified, the confirm timeout defaults to 600 seconds.
+
+					  persist:
+
+							Make the confirmed commit survive a session termination, and
+							set a token on the ongoing confirmed commit.
+
+					  persist-id:
+
+							Used to issue a follow-up confirmed commit or a confirming
+							commit from any session, with the token from the previous
+							<commit> operation.
+
+				   Example:
+
+					 <rpc message-id="101"
+						  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+					   <commit>
+						 <confirmed/>
+						 <confirm-timeout>120</confirm-timeout>
+					   </commit>
+					 </rpc>
+
+					 <rpc-reply message-id="101"
+						  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+					   <ok/>
+					 </rpc-reply>
+		
+		+ Rollback-on-Error Capability: chỉ ra rằng máy chủ sẽ hỗ trợ giá trị "rollback-on-error" trong tham số <error-option> cho hoạt động <edit-config>.
+			. Dependencies: None
+			. Capability Identifier: ":rollback-on-error" đc xác định bởi chuỗi sau
+										 urn:ietf:params:netconf:capability:rollback-on-error:1.0
+			. New Operations: None
+			. Modifications to Existing Operations:
+				, <edit-config>: ":rollback-on-error" cho phép giá trị "rollback-on-error" cho tham số <error-option> trên thao tác <edit-config>.
+					     <rpc message-id="101"
+							  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+						   <edit-config>
+							 <target>
+							   <running/>
+							 </target>
+							 <error-option>rollback-on-error</error-option>
+							 <config>
+							   <top xmlns="http://example.com/schema/1.2/config">
+								 <interface>
+								   <name>Ethernet0/0</name>
+								   <mtu>100000</mtu>
+								 </interface>
+							   </top>
+							 </config>
+						   </edit-config>
+						 </rpc>
+
+						 <rpc-reply message-id="101"
+							  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+						   <ok/>
+						 </rpc-reply>
+
+		+ Validate Capability: Xác thực bao gồm việc kiểm tra cấu hình hoàn chỉnh để tìm lỗi cú pháp và ngữ nghĩa trước khi áp dụng cấu hình cho thiết bị.
+			. Dependencies: None
+			. Capability Identifier: ":validate:1.1" đc xác định bởi chuỗi sau:
+											urn:ietf:params:netconf:capability:validate:1.1
+			. New Operations:
+				, <validate>: giao thức này xác nhận nội dung của cấu hình được chỉ định.
+						Example:
+
+							 <rpc message-id="101"
+								  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+							   <validate>
+								 <source>
+								   <candidate/>
+								 </source>
+							   </validate>
+							 </rpc>
+
+							 <rpc-reply message-id="101"
+								  xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+							   <ok/>
+							 </rpc-reply>
+
+			. Modifications to Existing Operations:
+				, <edit-config>: 
+
+		+ Distinct Startup Capability:
+			. Dependencies: None
+			. Capability Identifier: ":startup" đc xác định bởi chuỗi sau:
+										urn:ietf:params:netconf:capability:startup:1.0
+			. New Operations: None
+			. Modifications to Existing Operations:
+			
+		+ URL Capability:
+			. Mô tả: Đồng đẳng NETCONF có khả năng chấp nhận phần tử <url> trong các tham số <source> và <target>.  Khả năng được xác định thêm bởi các đối số URL cho biết các lược đồ URL được hỗ trợ
+			. Dependencies: None
+			. Capability Identifier: ":url" đc xác định bởi chuỗi sau
+											urn:ietf:params:netconf:capability:url:1.0?scheme={name,...}
+								:url phải chứa 1 "scheme" được gán danh sách tên lược đồ được phân tách bằng dấu phẩy cho biết lược đồ nào mà đồng đẳng NETCONF hỗ trợ.  Ví dụ:
+									urn:ietf:params:netconf:capability:url:1.0?scheme=http,ftp,file
+			. New Operations: None
+			. Modifications to Existing Operations:
+				, <edit-config>: ":url" sửa đổi <edit-config> để chấp nhận phần tử <url> như một thay thế cho tham số <config>.
+						Tệp mà url tham chiếu đến chứa cấu hình phân cấp dữ liệu cần sửa đổi, được mã hóa bằng XML trong phần tử <config> trong không gian tên "urn: ietf: params: xml: ns: netconf: base: 1.0".
+				, <copy-config>: ":url" sửa đổi <copy-config> để chấp nhận phần tử <url> làm giá trị của các tham số <source> và <target>.
+						Tệp mà url tham chiếu đến chứa kho dữ liệu hoàn chỉnh, được mã hóa bằng XML trong phần tử <config> trong không gian tên "urn: ietf: params: xml: ns: netconf: base: 1.0".
+				, <delete-config>: ":url sửa đổi hoạt động <delete-config> để chấp nhận phần tử <url> làm giá trị của các tham số <target>.
+				, <validate>: " :url" sửa đổi thao tác <validate> để chấp nhận phần tử <url> làm giá trị của tham số <source>.
+		+ XPath Capability:
+			. Description: XPath được đánh giá trong ngữ cảnh sau:
+					o  The set of namespace declarations are those in scope on the
+					  <filter> element.
+
+				    o  The set of variable bindings is defined by the data model.  If no
+					  such variable bindings are defined, the set is empty.
+
+				    o  The function library is the core function library, plus any
+					  functions defined by the data model.
+					  
+					o  The context node is the root node.
+					
+			. Dependencies: None
+			. Capability Identifier: ":xpath" đc xác định bởi chuỗi sau
+											 urn:ietf:params:netconf:capability:xpath:1.0
+			. New Operations: None
+			. Modifications to Existing Operations:
+				, <get-config> and <get>: " :xpath" sửa đổi các hoạt động <get> và <get-config> để chấp nhận giá trị "xpath" trong thuộc tính "type" của phần tử <filter>
+	
+	- Security Considerations:
+	
+	
+	giao thức giao tiếp bằng <rpc>
+			
+			
+
+					
+
+			
+
+		
+	 
+	
+	
+	
+	
+	https://tools.ietf.org/html/rfc6020
+	
+	YANG: YANG là một ngôn ngữ mô hình hóa dữ liệu được sử dụng để lập mô hình cấu hình và trạng thái dữ liệu được thao tác bởi giao thức NETCONF, hoạt động NETCONF và thông báo NETCONF.
+	
+		YIN là một biểu diễn XML của YANG (chuyển đổi khứ hồi không mất dữ liệu)
+		YANG có thể được dịch sang Lược đồ XML và RELAX NG để có thể sử dụng các công cụ XML hiện có
+		YANG có thể được dịch sang Schematron để xác thực nội dung NETCONF
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

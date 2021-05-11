@@ -1,0 +1,8 @@
+	
+	# VM để chế độ Screen Lock nên nó khóa màn hình á. kill session rồi tạo lại
+		- Mở MobaXterm -> ssh vào IP server của em, sau đó
+		1. Kill session: vncserver -kill :numberOfSession
+		2. Create session: vncserver :numberOfSession -geometry <độ phân giải màn hình> 
+		Example: vncserver :1 -geometry 1900x1000
+			
+	

@@ -51,6 +51,11 @@
 				./src/test/robotframework/acceptance/tests/testManagement/resource/testdata/data/EPG/AC/WebElementIdentifier
 		
 		- Layers of configuration:
+		
+			+ deployTypes-TEST, DEV, EECLOUD
+			+ Site-specifics_Finland1,2,3 and Bangalore1,2 for all deploytypes
+			+ global-configuration.yml- configuration common to all sites and all deploytypes
+			
 			
 		
 		- Build mechanism
@@ -58,6 +63,7 @@
 		
 		- Demo on NAC keywork
 		
-		- Tip and tricks
+		- Tip and tricks:
+		
 		
 		- Query

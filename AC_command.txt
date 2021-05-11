@@ -1,0 +1,207 @@
+
+
+
+
+
+				#Starting the project on local and docker
+				1. Pulling all images in common.yml
+					docker pull [image]
+					ex: docker pull artifactory-blr-fnms.int.net.nokia.com:9000/fnms-mariadb:nokia-1.1.9
+				2. Running docker-compose -f [dir]common.yml up -d
+				3. Building the project.
+					mvn clean install -Dtest -DfailIfNoTests=false
+				4. cd utc/package -> /home/bquocdin/images/runNac.sh clean => run on local
+				5. cd ~/code/base-platform/package/base-platform-image => docker build -t base-platform-image --build-arg version=1.0.0-SNAPSHOT .
+				6. cd ~/code/base-platform/package/base-platform-ext-image => docker build -t base-platform-ext-image --build-arg version=1.0.0-SNAPSHOT .
+				7. cd ~/code/utc/package -> docker build -t nac .
+
+
+
+
+
+				#SIM
+				1. Pulling all images in sim.yml. Link images: http://10.131.69.114/artifactory/webapp/#/home
+					docker pull [image]
+				2. Running docker-compose -f [dir]sim.yml up -d
+				3. Downloading device extension
+					http://10.131.69.114/artifactory/webapp/#/artifacts/browse/tree/General/libs-candidate-release/com/nokia/anv/plug
+				4. docker cp device-extension-ls-df-16gw-20a.06-577-20.9.0-SNAPSHOT_10959.zip ae0f869fabc7:/non-coded-plug-files
+
+				#ANV
+				docker images -> docker pull artifactory-blr-fnms.int.net.nokia.com:9000/anv:20.9.0-SNAPSHOT_11152 -> docker-compose -f /home/bquocdin/images/anv.yml down -> change anv file -> docker-compose -f /home/bquocdin/images/anv.yml up -d
+
+
+
+				#
+				1. http://10.131.69.114:8081/artifactory/webapp/#/builds/Altiplano/Maven_11227/1594610100836 -> downloader
+				2. Running *.bin
+				3. http://192.168.95.222:7181/system-administration-web-app/#/extensions -> importing *.zip
+
+
+
+				#Update and build new code
+				I. Local
+				1. Update code: git pull
+				2.  - Building code: list | grep  <name>
+					- bundle:watch <id>
+					- Navigating to <name> -> mvn clean install -Dtest -DfailIfNoTests=false
+					
+				II. Docker
+				1. Update code: git pull
+				2. Building code
+				3. Building features. Ex: controller-platform/features
+				4. Building utc/package
+				5. Running docker-compose -f [dir]ac.yml up -d
+				6. cd utc/package -> docker build -t nac .
+
+
+				#Update code for all package
+				./ee-environment/boxes/common-box/anvGit exec git pull
+				#View status on all package
+				./ee-environment/boxes/common-box/anvGit exec git status
+				#Checkout a branch
+				./ee-environment/boxes/common-box/anvGit git clone checkout <branch>
+
+				#Models
+				code/utc/automation/src/test/resources/robotframework/libraries/Models
+
+				#intents
+				code/utc/blueprints/harmonized-intents/
+
+
+				Note:
+				- Checkout code: git clone ssh://bquocdin@gerrit-essl2.int.net.nokia.com:29418/FNMS/ee-environment
+				utc/package -> docker build -t nac .
+				- bin/client -> log:tail
+				- Enable debug log: log:set debug com.nokia.fnms.controller.swmgmt
+				- list | grep -v Active
+
+
+				#Git commands
+				- Discarding local changes (permanently) to a file:
+				git checkout -- <file>
+				- Discard all local changes, but save them for possible re-use later:
+				git stash
+				- git commit -m "ticket ID - ticket name"
+				- git add .
+				- git push
+
+				#syncode master
+				1. ./ee-environment/boxes/common-box/anvGit git clone checkout <your_branch>
+				2. ./ee-environment/boxes/common-box/anvGit exec git pull
+				3. ./ee-environment/boxes/common-box/anvGit syncUpdatesFromIntBranch
+				4. ./ee-environment/boxes/common-box/anvGit exec git status
+				5. ./ee-environment/boxes/common-box/anvGit exec git push
+
+				#merge code to master
+				./ee-environment/boxes/common-box/anvGit deliverContentToIntBranch
+
+				#create new branch
+				1. ./ee-environment/boxes/common-box/anvGit git clone checkout master
+				2. ./ee-environment/boxes/common-box/anvGit createWorkBranch
+
+				#Thieu branch
+				1. checkout master
+				2. git branch <your branch>
+				3. git push -u origin <your branch>
+
+				#Create new branch
+				./ee-environment/boxes/common-box/anvGit createWorkBranch
+
+
+
+				======
+				Before merging, people can try to check RFLint locally by commands
+				cd ~/code
+				anvgit build -rf utc ANVAutomation > ~/RFLint_report.txt
+
+				Open report file ~/RFLint_report.txt => any starts with "E: " is error needs to be addressed
+				=====
+				mọi người nhớ follow nha, không kỹ sẽ fail master đó
+
+
+
+
+
+
+
+
+
+
+
+				git add . -> git reset HEAD
+
+
+
+
+				//commit code
+				1. git log -> lay id cua commit
+				2. checkout master
+				3. git cherry-pick "id cua commit"
+				4. git push
+
+
+
+
+
+
+
+				#server10
+				- k8sScript ac
+				- chay nac tren local: docker tag nac artifactory-espoo-fnms.int.net.nokia.com:9000/nac:20.9.0-SNAPSHOT_12079 => k get pod => k delete pod automation-altiplano-ac-7d9bf6fc56-4qvvk => k describe pod automation-altiplano-ac-7d9bf6fc56-6w2gz
+				- debug:
+					1. enable debug in file.
+					2. restart ac: k8sScript ac -> 1
+					3. kubectl expose deployment automation-altiplano-ac --type=NodePort --name=my-debug-ac
+					4. kubectl describe pod automation-altiplano-ac-7f98d9dc54-sdhc6
+				- update a bundle (ex: software bundle)
+					1. Building software code.
+					2. Building feature: cd controller-platform/features/ => mvn clean install -Dtest -DfailIfNoTests=false
+					3. Building utc/package
+					4. cd utc/package -> docker build -t nac .
+					5. docker tag nac artifactory-espoo-fnms.int.net.nokia.com:9000/nac:21.6.0-SNAPSHOT_16939 => k get pod => k delete pod automation-altiplano-ac-7d9bf6fc56-4qvvk => k describe pod automation-altiplano-ac-7d9bf6fc56-6w2gz
+				- k get svc (xem port sim)
+				- log container k8s: kubectl logs automation-altiplano-ac-7d9bf6fc56-4qvvk
+				- Find container id:
+					kubectl describe pod automation-sim-altiplano-simulatorls-fx-fant-f-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+					kubectl describe pod automation-sim-altiplano-simulatorls-fx-ihub-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+					kubectl describe pod automation-sim-altiplano-simulatorls-fx-fglt-b-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+					kubectl describe pod automation-sim-altiplano-simulatorvonu-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+					kubectl describe pod automation-sim-altiplano-simulatorls-sx-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+					kubectl describe pod automation-sim-altiplano-simulatorls-dpu-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+					kubectl describe pod automation-sim-altiplano-simulatorls-df-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+					kubectl describe pod automation-sim-altiplano-simulatorls-fx-fwlt-b-0 | grep "Container ID" | awk '{print $3}' | tail -n 1
+				- get build version: http://10.131.69.94:8080/job/Altiplano-Integration/
+
+				- Start setup AT
+				  ###
+				  Steps to enable ls-fx and ls-dpu simulators
+				  1. /home/bquocdin/code/ACAutomation/src/test/robotframework/acceptance/tests/testManagement/resources/testdata/data/EPG/AC/setup/SIMULATORS_OVERRIDE_VALUES_LSFX.yaml
+				  2. Adding ls-sx:true, ls-dpu: true
+				  ###
+				  3. cd ACAutomation -> mvn clean install robotframework:run -Duname=$USER -Dpassword=welcome -Dip=$ip -DdeploymentType=pipeline -DsiteName=Finland-Cloud2 -Dapp.name=AC -Djava.security.egd=file:/dev/./urandom -Danv.controller.navip=$ip -Ddocker_config.es_ip=altiplano-elasticsearch -DappContextPath=/application-context.xml -Ddocker_config.reponame=libs-candidate-release -Ddocker_config.plugs_repo=libs-candidate-release -Ddocker_config.mavenrepo=http://artifactory-espoo-fnms.int.net.nokia.com/artifactory/libs-candidate-release/  -Daltiplano-kibana.enabled=true -DAV_ref_version=20.12.0-SNAPSHOT_14172 -DAC_ref_version=20.12.0-SNAPSHOT_14083 -DAV_nonref_version=20.12.0-SNAPSHOT_14172 -DVNF_ref_version=20.12.0-SNAPSHOT_3037 -DhelmChartVersion=20.12.0-SNAPSHOT_3708 -Dincludes=b -Ddocker_config.3rdParty_artifactory_url=artifactory-espoo-fnms.int.net.nokia.com:9000
+				  4. k get svc -n simulator
+				  
+				- k edit deployment/automation-altiplano-ac -> i -> Ctrl + C -> wq!
+
+				- kibana log:
+				altiplano-fluentd:
+				  image:
+					registry: artifactory-espoo-fnms.int.net.nokia.com:9000
+				  # service: commented line
+				  env:
+					ES_URL: https://altiplano-elasticsearch:9200
+					INDEX_NAME_ES: logstash
+					
+				tags:
+				  infra: true
+				  belk-curator: false
+				  belk-kibana: true
+
+				altiplano-kibanakcproxy:
+				  enabled: true
+				altiplano-kibana:
+				  enabled: true
+				  
+				- Edit config of a pod
+				k edit deployment/automation-altiplano-ac -> i -> Ctrl + C -> wq!

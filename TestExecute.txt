@@ -1,0 +1,28 @@
+
+
+Bring up FMC setup by AT:
+1. Uninstall old setup:
+helm uninstall automation ...
+
+2. Build common-auto-fwk package:
+cd ~/code/common-auto-fwk/ && mvn clean install
+
+3. cd ~/code/FCAutomation/
+
+4. Check the latest build in
+http://10.157.88.36:8080/job/Altiplano-FWA-SystemTest/
+
+5. Bring up setup at FCAutomation: 
+
+mvn clean install robotframework:run -e -Dincludes=<AT_Tag> -Dexcludes=flaky,inprogress,blocked,sandbox -Duname=<csl> -Dpassword=welcome -Dip=<public_VM_IP> -DdeploymentType=pipeline -DsiteName=Bangalore-Cloud2 -Dapp.name=FWA -Djava.security.egd=file:/dev/./urandom -Danv.controller.navip=<public_VM_IP> -Ddocker_config.es_ip=<public_VM_IP> -Ddocker_config.artifactory_url=artifactory-espoo-fnms.int.net.nokia.com:9000 -Ddocker_config.mavenrepo=http://artifactory-espoo-fnms.int.net.nokia.com/artifactory/libs-candidate-release/ -Ddocker_config.3rdParty_artifactory_url=artifactory-espoo-fnms.int.net.nokia.com:9000 -Ddocker_config.helm_artifactory_url=http://artifactory-espoo-fnms.int.net.nokia.com:8081/artifactory/altiplano_helm_virtual -DappContextPath=/application-context.xml -Ddocker_config.reponame=libs-candidate-release -Danv.plugs=None -Ddocker_config.plugs_repo=libs-candidate-release -DsuperFB=false -Daltiplano-kibana.enabled=true -Dfwa_version=<latest_extension_green_build> -DAC_ref_version=<latest_extension_green_build> -DhelmChartVersion=<latest_integration_green_build>
+
+AT_Tag = FWA_AT41
+csl = thachnuy
+public_VM_IP = 10.131.227.254
+latest_extension_green_build = 21.6.0-SNAPSHOT_952 (Altiplano-Extension - Blueprints/Intents - 21.6.0-SNAPSHOT_952 in http://10.157.88.36:8080/job/Altiplano-FWA-SystemTest/)
+latest_integration_green_build = 21.6.0-SNAPSHOT_5623 (Altiplano-Integration - 21.6.0-SNAPSHOT_5623)
+
+
+run test:
+
+mvn clean install robotframework:run -e -Dincludes=FWA_AT600 -Dexcludes=flaky,inprogress,blocked,sandbox -Duname=thachnuy -Dpassword=welcome -Dip=10.131.227.254 -DdeploymentType=pipeline -DsiteName=Bangalore-Cloud2 -Dapp.name=FWA -Djava.security.egd=file:/dev/./urandom -Danv.controller.navip=10.131.227.254 -Ddocker_config.es_ip=10.131.227.254 -Ddocker_config.artifactory_url=artifactory-espoo-fnms.int.net.nokia.com:9000 -Ddocker_config.mavenrepo=http://artifactory-espoo-fnms.int.net.nokia.com/artifactory/libs-candidate-release/ -Ddocker_config.3rdParty_artifactory_url=artifactory-espoo-fnms.int.net.nokia.com:9000 -Ddocker_config.helm_artifactory_url=http://artifactory-espoo-fnms.int.net.nokia.com:8081/artifactory/altiplano_helm_virtual -DappContextPath=/application-context.xml -Ddocker_config.reponame=libs-candidate-release -Danv.plugs=None -Ddocker_config.plugs_repo=libs-candidate-release -DsuperFB=false -Daltiplano-kibana.enabled=true -Dfwa_version=21.6.0-SNAPSHOT_952 -DAC_ref_version=21.6.0-SNAPSHOT_952 -DhelmChartVersion=21.6.0-SNAPSHOT_5623

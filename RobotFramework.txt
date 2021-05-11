@@ -1,3 +1,25 @@
 
 
-	- Hight level architect 
+	- Hight level architect:
+	
+		Test Data (Test Data syntax) -> Robot Framwork (Test Libraries API)	-> Test libraries(AI)	->Tools(AI)				AI: Application interface
+																									->System under Test 
+																									
+	
+	- Simple Tarbular syntax
+	
+	- Data Driven Testcase
+	
+	- Separate Test Data Editor
+	
+	- Clear Report
+	
+	- Detailed - logs
+	
+	- Generic Test libraries
+	
+	- Web testing, Swing, SWT, Windown GUIs, databases, SSH, Telnet,....
+	
+	- Remote test libraries and orther plugin for jenkins/Hudson, Maven, Ant,...
+	
+	- Text Editor suuport: Emacs, Vim, Text Mate.

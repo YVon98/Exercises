@@ -1,0 +1,7 @@
+		
+		
+		
+		
+		các lỗi gặp phải khi thực hiện automation test
+		
+		>Device with duid FM-4G-Gateway-Auto-YL-2004 is unreachable: lỗi chết device

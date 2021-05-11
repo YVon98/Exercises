@@ -1,0 +1,71 @@
+
+
+		HDM server 72.101		
+		http://10.131.72.101:7003/hdm/login netopmgr/ password
+		
+		HDM server 72.104
+		http://10.131.72.101:7003/hdm/login domain1/ b
+		
+		
+		# Thực hiện ở thư mục download
+		(Download the latest blueprints downloader for 4G IDU from artifactory:)
+		Blueprint Artifactory:
+		http://10.131.69.114/artifactory/libs-candidate-release/com/nokia/anv/plug/fastmile/
+		
+		Ex: http://10.131.69.114/artifactory/libs-candidate-release/com/nokia/anv/plug/fastmile/2/01/07/blueprint-downloader-fastmile-tr98-2.01.07-1/21.6.0-SNAPSHOT_956/
+			
+		Execute blueprint-downloader:
+        Unzip file: unzip blueprint-downloader-fastmile-tr98-2.01.07-1-21.6.0-SNAPSHOT_956.zip
+		
+        ./blueprint-downloader-fastmile-tr98-2.01.07-1-21.6.0-SNAPSHOT_956.sh 
+		
+		$NOKIAURL is not defined. Enter the URL to the artifactory (for example 'http://IP address:port'): 
+		10.131.69.114:8081/artifactory
+		$NOKIALOGIN is not defined. Enter the login name to the artifactory (enter 'nologin' if no credentials are needed): 
+		nologin
+		$ARTIFACTORY_DIR is not set. Using 'artifactory/ac_libraries_release'. Press <enter> to accept or provide another value: 
+		libs-candidate-release
+		********************************************************************************
+		nv-fastmile-tr098-4g-gw-21.6.0-SNAPSHOT_956.zip  [OK]
+		intent-fm-subscriber-21.6.0-SNAPSHOT_956.zip  [OK]
+		intent-fm-cpe-infra-21.6.0-SNAPSHOT_956.zip  [OK]
+		pm-bulk-fm-tr098-cpe-std-2.01.07-21.6.0-SNAPSHOT_956.zip  [OK]
+		pm-live-fm-tr098-cpe-std-2.01.07-21.6.0-SNAPSHOT_956.zip  [OK]
+		tca-fm-tr098-2.01.07-21.6.0-SNAPSHOT_956.zip  [OK]
+		********************************************************************************
+		Download summary: 6 success, 0 failures
+		All blueprints downloaded in downloaded-fastmile-tr98-2.01.07-1-21.6.0-SNAPSHOT_956.zip	
+
+		
+		Create simulator:
+		HDM web:
+		Device Type: 5G_1005
+		Serial Number: FM-5G-R1-Gateway-Automation1
+		Activated: Yes
+		HTTP Public: 5GR1GWAutomation pass: 123456
+		Connection Request: cr-FMIDU1 pass: password
+
+		sudo ssh root@10.131.72.101 pass: chenn@!96
+		cd /opt/simulator
+		Copy .sh file (runFMCustom_5G_R1_Gateway_Automation1.sh):
+		scp runOldFileName.sh runNewFileName.sh (Ex: scp runFMCustom_4G_Receiver_Automation3.sh runFMCustom_5G_R1_Gateway_Automation1.sh)
+
+		Edit .sh file:
+		SERIAL="--serialnumber FM-5G-R1-Gateway-Automation1"
+		PROPERTIES="--modelpropertiesfile FM-Custom-5G-GW-R1-1005-Model-Ngoc.properties"
+		SIMULATOR=com.alcatel.hdm.simulator.cpe.GatewaySimulatorPool
+		--crPort 8900
+		InternetGatewayDevice.ManagementServer.Username=5GR1GWAutomation (HTTP Public Username)
+		InternetGatewayDevice.ManagementServer.Password=123456 (HTTP Public Password)
+
+		Execute .sh file: 
+		[root@host-70-1-1-190 simulators]# ./runFMCustom_5G_R1_Gateway_Automation1.sh
+
+		
+		
+		
+		anvGit exec git pull
+
+		back port to 21.6 release
+
+

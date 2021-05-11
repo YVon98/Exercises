@@ -1,17 +1,41 @@
 
 
 		Docker: ( là một nền tảng Container)........https://docker-curriculum.com/
+		Cần đc cài đặt và khởi chạy trên linux
+		
+		
+		Docker là một chương trình dòng lệnh, một daemon nền và một tập hợp các dịch vụ từ xa 
+		có phương pháp tiếp cận hậu cần để giải quyết các vấn đề phần mềm phổ biến 
+		và đơn giản hóa trải nghiệm của bạn khi cài đặt, chạy, xuất bản và gỡ bỏ phần mềm.
+	
+		Docker sử dụng một công nghệ Unix được gọi là Container
+		Docker container bao bọc một phần mềm trong một hệ thống tệp hoàn chỉnh 
+		chứa mọi thứ mà nó cần để chạy: mã, thời gian chạy, công cụ hệ thống, 
+		thư viện hệ thống - bất cứ thứ gì bạn có thể cài đặt trên máy chủ.  
+		Điều này đảm bảo rằng nó sẽ luôn chạy giống nhau, bất kể nó đang chạy trong môi trường nào.
+		
+		Khi ứng dụng của bạn ở trong vùng chứa Docker, bạn không phải lo lắng về việc thiết lập 
+		và duy trì các môi trường khác nhau hoặc các công cụ khác nhau cho từng ngôn ngữ.  
+		Tập trung vào việc tạo các tính năng mới, khắc phục sự cố và phần mềm vận chuyển.
+		
 		
 		- Docker là một nền tảng để cung cấp cách để building,
 		deploying và running ứng dụng dễ dàng hơn bằng cách sử dụng các containers (trên nền tảng ảo hóa).
 		
 		- Container: cho phép lập trình viên đóng gói một ứng dụng với tất cả các phần cần thiết, chẳng hạn như thư viện và các phụ thuộc khác, và gói tất cả ra dưới dạng một package.
 		(ứng dụng sẽ chạy trên mọi máy Linux khác bất kể mọi cài đặt tùy chỉnh mà máy có thể có khác với máy được sử dụng để viết code)
+		(Container : Docker sử dụng vùng chứa (Container) để chạy ứng dụng.
+		 Vùng chứa là một phiên bản đang chạy được tạo từ hình ảnh.  
+		 Nó có thể được bắt đầu, dừng lại, xóa.  
+		 Mỗi container được cách ly với nhau để đảm bảo an toàn cho nền tảng.
+		 Vùng chứa có thể được coi là một phiên bản đơn giản của môi trường Linux (bao gồm quyền của người dùng root, không gian xử lý, 
+		 không gian người dùng và không gian mạng,v.v.) để chạy các ứng dụng.)
 		
-		- Images: là 1 khuôn mẫu để tạo container.
+		- Images (tương đương với docker mirror) : là 1 khuôn mẫu để tạo container.
 		
 		- Container: là một instance của image (có thể create, start, stop, move or delete container dựa trên Docker API hoặc Docker CLI)
 		https://nickjanetakis.com/assets/blog/dockers-architecture-6c296cdac053f794eabed5ddda5c04ba7110c746687a0e8b88ba6df919415175.jpg
+		
 		- Quy trình thực thi của một hệ thống khi sử dụng Docker:
 			+ Build: tạo một DockerFile(code của chúng ta) đc build tại một máy đã cài đặt Docker Engine, khi build xong Container này chứa ứng dụng kèm bộ thư viện của chúng ta.
 			+ Push: push Container này lên cloud và lưu trên đó.
@@ -21,6 +45,106 @@
 			+ Triển khai cấu trúc microservices
 			+ Khi không muốn tốn quá nhiều thời gian để config máy local và server có cùng một môi trường để chạy ứng dụng (build 1 lần chạy nhiều nơi)
 			
+		
+		
+		3 cách cài đặt docker image :
+			Docker Hub and other registries
+			Using image files with docker save and docker load
+			Building images with Dockerfiles
+
+		::::::::::::::::::::::::::::docker command
+		
+		::::::::Docker image
+		
+		docker load -> Used for Loading images 
+		docker save -> Used to save the image to a file . It creates TAR archive files
+		
+		docker images : hiển thị tất cả các image 
+		docker import : tạo 1 image từ một tarball
+		docker build : tạo image từ Dockerfile. Dockerfile chứa một tập hợp các hướng dẫn cho Docker biết cách xây dựng image. Docker build được sử dụng để xây dựng một image
+		docker commit : tạo image từ 1 container, tạm dừng image đó nếu nó đang chạy
+		docker rmi : xóa 1 image  (docker rmi <image_name>) (hãy đảm bảo không có image nào phụ thuộc vào image bạn xóa)
+		docker load : tải image từ kho lưu trữ tar dưới dạng STDIN, bao gồm image và tag
+		docker save : lưu image vào luồng lưu trữ tar thành STDOUT với tất cả các layers, tags & versions
+		docker history : hiển thị lịch sử của image
+		docker tag : tags an image to a name (local or registry).
+		
+		**Note: Mặc dù bạn có thể sử dụng lệnh docker rmi để xóa các hình ảnh cụ thể, 
+		nhưng có một công cụ được gọi là docker-gc sẽ xóa các image không còn được sử dụng bởi bất kỳ vùng chứa nào một cách an toàn.
+		
+		
+		:::::::::::::::: Docker Container
+		
+		docker create : tạo 1 container nhưng không khởi động nó
+		docker rename : cho phép đổi tên container
+		docker run : tạo và khởi động 1 container trong 1 thao tác
+		docker rm : xóa một container
+		docker update : cập nhật giới hạn của một tài nguyên, Nếu muốn một container tạm thời, docker run --rm sẽ loại bỏ container sau khi nó dừng.
+			ví dụ: docker update [OPTIONS] CONTAINER [CONTAINER...]
+			     $ docker update --cpu-shares 512 abebf7571666
+		docker start : khởi động 1 container (nó sẽ đang chạy)
+		docker stop : dừng một container đang chạy
+		docker restart : dừng và khởi động lại container
+		docker pause : dừng một container đang chạy, đóng băng nó
+		docker unpause : 
+		docker wait : block cho đến khi container đang chạy ngưng
+		docker kill : gửi một SIGKILL đến container đang chạy
+		docker attach : sẽ kết nối tới một container đang chạy
+		docker logs : lấy nhậy kí từ container
+		docker inspect : xem xét tất cả thông tin trên một container (bao gồm địa chỉ IP)
+		docker ps : hiển thị những container đang chạy mặc định
+		docker ps -a : hiển thị tất cả các containers đã ngừng
+		docker events : lấy những sự kiện từ container
+		docker port : hiển thị public facing port của container.
+		docker top : hiển thị những process đang chạy trong container
+		docker stats : hiển thị những thống kê sử dụng tài nguyên của container
+		docker stats -all : hiển thị các files đã thay đổi trong FS của container
+		
+		:::::::: Import/ Export
+		
+		docker cp : sao chép các files,  folders giữa 1 container và local filesystem
+		docker export : đưa container filesystem thành luồng lưu trữ tarball đến STDOUT.
+		
+		::::::::Executing Commands
+		
+		docker exec : để thực thi 1 command trong container
+		
+		''''To enter a running container, attach a new shell process to a running container called foo, use: docker exec -it foo /bin/bash.
+
+		
+		:::::::::::::::: Docker Warehouse (Repository)
+		
+		- Một repository là một tập hợp các image được lưu trữ, cùng tạo nên 1 hệ thống file trong 1 container
+		- Một registry là 1 host -- 1 server lưu trữ các repository và cung cấp 1 HTTP API để quản lí việc upload và download của các repository
+		- Docker.com lưu trữ index của riêng nó bvafo 1 registry trung tâm chứa một số lượng lớn các repositories
+		- 2 loại warehouse: 
+			+ public
+			+ private
+		- Docker Hub : là 1 public warehouse lớn lưu trữ 1 số lượng lớn images sẵn sàng cho người dùng download 
+		- Người dùng cũng có thể tạo 1 private warehouse trong mạng cục bộ ví dụ như  Tutum.co và Google Container Registry là ví dụ điển hình
+		
+		#lưu ý: Docker HUb và Quay.io warehouse đc xây dựng giữa public và private
+		#Commands:
+		docker login : để login 1 registry
+		docker logout : để logout 1 registry
+		docker search : tìm kiếm registry cho image
+		docker pull : pull 1 image từ registry đến máy local
+		docker push : pushes 1 image từ registry đến máy local
+ 
+
+	Các giải pháp cho vấn đề con gà và quả trứng của docker
+	
+	- Phương án 1: tiếp cận thủ công "chính thống" với Docker image registry thuần túy
+	- Phương án 2: use Docker Machine, Swarm and Compose
+		Việc sử dụng các công cụ điều phối có sẵn này giúp việc triển khai các giải pháp phần mềm dễ dàng hơn nhiều.  Tuy nhiên, liệu các nhà cung cấp CORD có hỗ trợ họ không?  Rất có thể, nhưng cần được theo dõi trong AT&T D2.0 và các diễn đàn tương tự.
+	- Phương án 3: sử dụng images trình khởi chạy truy cập daemon Docker
+		Trình khởi chạy đảm nhận việc chạy tập lệnh cài đặt để triển khai các thành phần được định cấu hình cụ thể dưới dạng các docker container bổ sung trong môi trường thời gian chạy của khách hàng. Bộ chứa Docker (docker container) của bệ phóng hoạt động như một tên lửa SpaceX, đưa sản phẩm phần mềm vào trung tâm dữ liệu giống như một vệ tinh vào không gian quỹ đạo, sau đó quay trở lại trái đất và tắt.
+		
+		
+		
+		
+	-----------------------------------------------------------------------------------	
+		
 		
 		Kubernetes: công cụ điều phối container cho nền tảng Container như Docker 
 		- Tất cả các thành phần của Kubernetes thông qua máy chủ API, có thể chia thành 3 thành phần chính:
@@ -32,3 +156,14 @@
 			Sự phối hợp giữa kubernates và docker
 	*** Có thể sử dụng Docker mà k cần Kubernetes
 	*** Kubernetes cần runtime container -> k thể sử dụng riêng lẻ
+	
+	-----------------------------------------------------------------
+	Karaf : là một container đc hổ trợ bởi OSGi, có thể lưu cả ứng dụng OSGi hoặc k phải OSGi
+	Các đặt điểm chính: hot deployment, dynamic configuration, logging, provisioning, native OS integration, shell console, remote access, security, instances managing.
+	
+	
+	
+	
+	
+	
+	

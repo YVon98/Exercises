@@ -13,11 +13,40 @@
 			
 			Sync code with master:
 			Step 1. Pull code: anvGit exec git pull
+			Nếu có change code ở local
+			git stash => lưu những code thay đổi vào bộ nhớ tạm
+
 			Step 2. Sync code with master: anvGit syncUpdatesFromIntBranch
 			Step 3. Push code: anvGit exec git push
+
+=> git stash pop => lấy những code thay đổi đã lưu vào bộ nhớ ra
+
+---code/extensions
+---code/controller-platform
+---code/...
+---FB = feature branch = branch name
+
+code/extensions/..../mapping.js
+git status
+git checkout code/extensions/..../mapping.js
+
+Không change gì hết nhưng ở local lại có change => git checkout . or git checkout <filename>
 			
 			Commit code:
 			Step 1. Check different: git diff .
 			Step 2. git add .
 			Step 3. git commit -m "ID ticket - Summary". Ex: git commit -m "FNMS-81621 The NV model for 02.01.09 has some issues as it is sending different requests for the attached cell stat"
 			Step 4. git push
+
+
+
+
+checkout: branch có file A, có 8 dòng
+local: file A có 9 dòng
+=> git commit + git push => local file A có 9 dòng
+=> git checkout => local file A có 8 dòng
+
+git logs => show log
+git revert <filename>
+git reset HEAD
+git revert commit

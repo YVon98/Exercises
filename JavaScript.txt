@@ -275,7 +275,7 @@ onload	The browser has finished loading the page
 
 				
 	- Request:  https://content.codecademy.com/courses/intermediate-javascript-requests/diagrams/XHR%20GET%20transparent.svg
-
+				https://content.codecademy.com/courses/intermediate-javascript-requests/diagrams/XHR%20POST%20transparent.svg
 
 	
 	

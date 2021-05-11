@@ -1,0 +1,45 @@
+
+
+	Artifactory
+	
+	FWA Test: fc collect jacoco report
+	
+	
+	start k8s:
+	
+	helm fetch findland/artifactory altiplano-simulatorgroup --version 21.6.0-SNAPSHOT-5610  => <file>.tgz
+	tar xvzf <file>.tgz => folder altiplano-simulatorgroup
+	
+	altiplano-secrets => default
+	altiplano-infra => default
+	altiplano-solution => default
+	altiplano-simulator => simualtor
+	
+	helm upgrade --install automation-secret --namespace simulator --values <file yaml> --values <file yaml> ..../altiplano-secrets
+	
+	helm upgrade --install automation-infra --namespace simulator --values <file yaml> --values <file yaml> ..../altiplano-infra
+	
+	helm upgrade --install automation --namespace simulator --values <file yaml> --values <file yaml> ..../altiplano-solution
+	
+	helm upgrade --install automation-sim --namespace simulator --values <file yaml> --values <file yaml> ..../altiplano-simulator
+	
+	mvn clean install robotframework:run -e -Dincludes=FWA_AT600 -Dexcludes=flaky,inprogress,blocked,sandbox -Duname=thachnuy -Dpassword=welcome -Dip=10.131.227.254 -DdeploymentType=pipeline -DsiteName=Bangalore-Cloud2 -Dapp.name=FWA -Djava.security.egd=file:/dev/./urandom -Danv.controller.navip=10.131.227.254 -Ddocker_config.es_ip=10.131.227.254 -Ddocker_config.artifactory_url=artifactory-espoo-fnms.int.net.nokia.com:9000 -Ddocker_config.mavenrepo=http://artifactory-espoo-fnms.int.net.nokia.com/artifactory/libs-candidate-release/ -Ddocker_config.3rdParty_artifactory_url=artifactory-espoo-fnms.int.net.nokia.com:9000 -Ddocker_config.helm_artifactory_url=http://artifactory-espoo-fnms.int.net.nokia.com:8081/artifactory/altiplano_helm_virtual -DappContextPath=/application-context.xml -Ddocker_config.reponame=libs-candidate-release -Danv.plugs=None -Ddocker_config.plugs_repo=libs-candidate-release -DsuperFB=false -Daltiplano-kibana.enabled=true -Dfwa_version=21.6.0-SNAPSHOT_1008 -DAC_ref_version=21.6.0-SNAPSHOT_1008 -DhelmChartVersion=21.6.0-SNAPSHOT_5713
+	
+	
+	-Dfwa_version = -DAC_ref_version = Altiplano-Extension - Blueprints/Intents
+	-DhelmChartVersion = Build of pipeline Integration
+	
+	kubectl get pod: liệt kê các pod đang chạy (namespace default)
+	kubectl get pod -A: liệt kê tất cả các pod đang chạy (tất cả namespace)
+	
+	///cái này để coi build mới nhất rồi chạy
+	Link pipeline Integration:
+	http://10.157.88.36:8080/job/Altiplano-Integration/
+	
+	link pipeline FWA-SystemTest:
+	http://10.157.88.36:8080/job/Altiplano-FWA-SystemTest/
+	
+	
+Parent suite setup failed:
+Exception in bringing the kubernetes setup
+Exception while fetching helm chart, failing the setup

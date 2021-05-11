@@ -1,0 +1,35 @@
+
+
+			JENKIN:
+			- Giới thiệu:
+				+ Jenkins là công cụ Tích hợp liên tục
+				+ Jenkins được sử dụng để xây dựng và kiểm tra các dự án phần mềm của bạn liên tục, giúp các nhà phát triển tích hợp các thay đổi vào projec và có một bảng dựng mới dễ dàng hơn
+				+ Nó cũng cho phép bạn liên tục cung cấp phần mềm của mình bằng cách tích hợp với một số lượng lớn các công nghệ thử nghiệm và triển khai.
+				+ Với Jenkins, các tổ chức có thể đẩy nhanh quá trình phát triển phần mềm thông qua tự động hóa.  Jenkins tích hợp các quy trình vòng đời phát triển của tất cả các loại, bao gồm xây dựng, tài liệu, thử nghiệm, gói, giai đoạn, triển khai, phân tích tĩnh và hơn thế nữa
+				+ Jenkins đạt được Tích hợp liên tục với sự trợ giúp của các plugin.  Các plugin cho phép tích hợp các giai đoạn DevOps khác nhau.  Nếu bạn muốn tích hợp một công cụ cụ thể, bạn cần cài đặt các plugin cho công cụ đó.  Ví dụ: Git, dự án Maven 2, Amazon EC2, nhà xuất bản HTML, v.v.
+				+ https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2016/10/Jenkins-integration-jenkins-tutorial-Edureka.jpg
+			
+			- Ưu điểm: 
+				+ Nó là một công cụ mã nguồn mở với sự hỗ trợ cộng đồng tuyệt vời.
+				+ dễ dàng cài đặt
+				+ Nó có hơn 1000 plugin để bạn dễ dàng làm việc.  Nếu một plugin không tồn tại, bạn có thể viết mã và chia sẻ nó với cộng đồng
+				+ MIễn phí
+				+ Nó được xây dựng bằng Java và do đó, nó có thể di động đến tất cả các nền tảng chính.
+				
+			- Những điểm khiến Jenkins tách biệt nó với công cụ Tích hợp liên tục khác: 
+				+ Về tính năng:
+					. 
+				+ What is Continuous Integration?
+					Tích hợp liên tục là một thực tiễn phát triển trong đó các nhà phát triển được yêu cầu thực hiện các thay đổi đối với mã nguồn trong một kho lưu trữ được chia sẻ nhiều lần một ngày hoặc thường xuyên hơn.  Mọi cam kết được thực hiện trong kho lưu trữ sau đó được xây dựng.  Điều này cho phép các nhóm phát hiện sớm các vấn đề.  Ngoài ra, tùy thuộc vào công cụ Tích hợp liên tục, có một số chức năng khác như triển khai ứng dụng xây dựng trên máy chủ thử nghiệm, cung cấp cho các nhóm liên quan kết quả xây dựng và thử nghiệm, v.v.
+				+ Continuous Integration With Jenkins
+					. Các nhà phát triển phải đợi cho đến khi phần mềm hoàn chỉnh được phát triển để có kết quả thử nghiệm.
+					. Khả năng cao là kết quả kiểm tra có thể hiển thị nhiều lỗi. Các nhà phát triển rất khó tìm ra những lỗi đó vì họ phải kiểm tra toàn bộ mã nguồn của ứng dụng
+					. https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2016/10/Saurabh-01.png
+						, Đầu tiên, một nhà phát triển cam kết mã vào kho lưu trữ mã nguồn.  Trong khi đó, máy chủ Jenkins kiểm tra kho lưu trữ định kỳ để tìm các thay đổ
+						, Ngay sau khi một cam kết xảy ra, máy chủ Jenkins phát hiện những thay đổi đã xảy ra trong kho mã nguồn.  Jenkins sẽ thực hiện những thay đổi đó và sẽ bắt đầu chuẩn bị một bản dựng mới.
+						, Nếu quá trình xây dựng không thành công, thì nhóm liên quan sẽ được thông báo.
+						, Nếu quá trình xây dựng thành công, thì Jenkins sẽ triển khai phần mềm được xây dựng trong máy chủ thử nghiệm.
+						, Sau khi thử nghiệm, Jenkins tạo phản hồi và sau đó thông báo cho các nhà phát triển về kết quả xây dựng và thử nghiệm.
+						, Nó sẽ tiếp tục kiểm tra kho lưu trữ mã nguồn để tìm những thay đổi được thực hiện trong mã nguồn và toàn bộ quá trình tiếp tục lặp lại.
+						, 
+			
